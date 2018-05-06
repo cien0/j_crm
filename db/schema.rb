@@ -11,7 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180506145440) do
+ActiveRecord::Schema.define(version: 20180506164927) do
+
+  create_table "adres_kontr", force: :cascade do |t|
+    t.integer  "Id_Kontrahenci"
+    t.integer  "Typ"
+    t.string   "Kraj"
+    t.string   "Kod_pocztowy"
+    t.string   "Miasto"
+    t.string   "Skrytka"
+    t.string   "Ulica"
+    t.string   "Nr_budynku"
+    t.string   "Nr_lokalu"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "adres_osoba", force: :cascade do |t|
+    t.integer  "Id_Osoba_kont"
+    t.integer  "Typ"
+    t.string   "Kraj"
+    t.string   "Kod_pocztowy"
+    t.string   "Miasto"
+    t.string   "Skrytka"
+    t.string   "Ulica"
+    t.string   "Nr_budynku"
+    t.string   "Nr_lokalu"
+    t.text     "Opis"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "dost_marketingowe", force: :cascade do |t|
+    t.integer  "Id_Kont_klient"
+    t.string   "Typ"
+    t.decimal  "Ile"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "faktury", force: :cascade do |t|
     t.integer  "Id_kontrahenci"
@@ -22,6 +59,55 @@ ActiveRecord::Schema.define(version: 20180506145440) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "inf_dodatka_kontr", force: :cascade do |t|
+    t.integer  "Id_Kontrahenci"
+    t.text     "Inf_dodatkowa"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "kierownik", force: :cascade do |t|
+    t.string   "Imie"
+    t.string   "Nazwisko"
+    t.string   "Login"
+    t.boolean  "Aktywny"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "kont_klient", force: :cascade do |t|
+    t.integer  "Id_Kontrahenci"
+    t.date     "Data"
+    t.integer  "Typ"
+    t.integer  "Cel"
+    t.text     "Raport"
+    t.text     "Inf_dodat"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "kontrahenci", force: :cascade do |t|
+    t.integer  "Id_system"
+    t.string   "Nazwa"
+    t.string   "NIP"
+    t.string   "WWW"
+    t.string   "Numer_tel"
+    t.string   "Numer_fak"
+    t.string   "Email"
+    t.integer  "Id_opiekun"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "numer_osoba", force: :cascade do |t|
+    t.integer  "Id_Osoba_kont"
+    t.string   "Kontakt"
+    t.integer  "Typ"
+    t.text     "Opis"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "obroty", force: :cascade do |t|
     t.integer  "Id_kontrahenci"
     t.integer  "Rok"
@@ -29,6 +115,53 @@ ActiveRecord::Schema.define(version: 20180506145440) do
     t.decimal  "Kwota"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "odmowa", force: :cascade do |t|
+    t.integer  "Id_Kont_klient"
+    t.integer  "Odmowa"
+    t.date     "Data"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "opiekun", force: :cascade do |t|
+    t.string   "Imie"
+    t.string   "Nazwisko"
+    t.string   "Login"
+    t.boolean  "Aktywny"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "osoba_kont", force: :cascade do |t|
+    t.string   "Imie"
+    t.string   "Imiona"
+    t.string   "Nazwisko"
+    t.date     "Data_urodz"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "status", force: :cascade do |t|
+    t.integer  "Id_kontrahenci"
+    t.integer  "Status"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "zlecenie", force: :cascade do |t|
+    t.integer  "Id_Kierownik"
+    t.integer  "Id_Opiekun"
+    t.date     "Data_utworzenia"
+    t.date     "Data_zlecenia"
+    t.integer  "Typ"
+    t.string   "Opis"
+    t.integer  "Status"
+    t.text     "Raport"
+    t.text     "Info"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

@@ -1,0 +1,29 @@
+<%= form_for(@dost_marketingowe) do |f| %>
+  <% if @dost_marketingowe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dost_marketingowe.errors.count, "error") %> prohibited this dost_marketingowe from being saved:</h2>
+
+      <ul>
+      <% @dost_marketingowe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Id_Kont_klient %><br>
+    <%= f.number_field :Id_Kont_klient %>
+  </div>
+  <div class="field">
+    <%= f.label :Typ %><br>
+    <%= f.text_field :Typ %>
+  </div>
+  <div class="field">
+    <%= f.label :Ile %><br>
+    <%= f.text_field :Ile %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

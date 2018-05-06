@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Adres Kontr</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id kontrahenci</th>
+      <th>Typ</th>
+      <th>Kraj</th>
+      <th>Kod pocztowy</th>
+      <th>Miasto</th>
+      <th>Skrytka</th>
+      <th>Ulica</th>
+      <th>Nr budynku</th>
+      <th>Nr lokalu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adres_kontr.each do |adres_kontr| %>
+      <tr>
+        <td><%= adres_kontr.Id_Kontrahenci %></td>
+        <td><%= adres_kontr.Typ %></td>
+        <td><%= adres_kontr.Kraj %></td>
+        <td><%= adres_kontr.Kod_pocztowy %></td>
+        <td><%= adres_kontr.Miasto %></td>
+        <td><%= adres_kontr.Skrytka %></td>
+        <td><%= adres_kontr.Ulica %></td>
+        <td><%= adres_kontr.Nr_budynku %></td>
+        <td><%= adres_kontr.Nr_lokalu %></td>
+        <td><%= link_to 'Show', adres_kontr %></td>
+        <td><%= link_to 'Edit', edit_adres_kontr_path(adres_kontr) %></td>
+        <td><%= link_to 'Destroy', adres_kontr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adres kontr', new_adres_kontr_path %>

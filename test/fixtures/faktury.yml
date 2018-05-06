@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Id_kontrahenci: 1
+  Nr_faktury: MyString
+  Kwota: 9.99
+  VAT: 9.99
+
+two:
+  Id_kontrahenci: 1
+  Nr_faktury: MyString
+  Kwota: 9.99
+  VAT: 9.99

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id kontrahenci:</strong>
+  <%= @obroty.Id_kontrahenci %>
+</p>
+
+<p>
+  <strong>Rok:</strong>
+  <%= @obroty.Rok %>
+</p>
+
+<p>
+  <strong>Miesiac:</strong>
+  <%= @obroty.Miesiac %>
+</p>
+
+<p>
+  <strong>Kwota:</strong>
+  <%= @obroty.Kwota %>
+</p>
+
+<%= link_to 'Edit', edit_obroty_path(@obroty) %> |
+<%= link_to 'Back', obroty_index_path %>

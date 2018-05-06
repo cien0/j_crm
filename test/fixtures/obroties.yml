@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Id_kontrahenci: 1
+  Rok: 1
+  Miesiac: 1
+  Kwota: 9.99
+
+two:
+  Id_kontrahenci: 1
+  Rok: 1
+  Miesiac: 1
+  Kwota: 9.99

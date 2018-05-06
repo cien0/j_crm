@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dost Marketingowe</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id kont klient</th>
+      <th>Typ</th>
+      <th>Ile</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dost_marketingowe.each do |dost_marketingowe| %>
+      <tr>
+        <td><%= dost_marketingowe.Id_Kont_klient %></td>
+        <td><%= dost_marketingowe.Typ %></td>
+        <td><%= dost_marketingowe.Ile %></td>
+        <td><%= link_to 'Show', dost_marketingowe %></td>
+        <td><%= link_to 'Edit', edit_dost_marketingowe_path(dost_marketingowe) %></td>
+        <td><%= link_to 'Destroy', dost_marketingowe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dost marketingowe', new_dost_marketingowe_path %>

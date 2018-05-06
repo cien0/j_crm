@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Imie:</strong>
+  <%= @opiekun.Imie %>
+</p>
+
+<p>
+  <strong>Nazwisko:</strong>
+  <%= @opiekun.Nazwisko %>
+</p>
+
+<p>
+  <strong>Login:</strong>
+  <%= @opiekun.Login %>
+</p>
+
+<p>
+  <strong>Aktywny:</strong>
+  <%= @opiekun.Aktywny %>
+</p>
+
+<%= link_to 'Edit', edit_opiekun_path(@opiekun) %> |
+<%= link_to 'Back', opiekun_index_path %>

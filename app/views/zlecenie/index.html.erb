@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Zlecenie</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id kierownik</th>
+      <th>Id opiekun</th>
+      <th>Data utworzenia</th>
+      <th>Data zlecenia</th>
+      <th>Typ</th>
+      <th>Opis</th>
+      <th>Status</th>
+      <th>Raport</th>
+      <th>Info</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zlecenie.each do |zlecenie| %>
+      <tr>
+        <td><%= zlecenie.Id_Kierownik %></td>
+        <td><%= zlecenie.Id_Opiekun %></td>
+        <td><%= zlecenie.Data_utworzenia %></td>
+        <td><%= zlecenie.Data_zlecenia %></td>
+        <td><%= zlecenie.Typ %></td>
+        <td><%= zlecenie.Opis %></td>
+        <td><%= zlecenie.Status %></td>
+        <td><%= zlecenie.Raport %></td>
+        <td><%= zlecenie.Info %></td>
+        <td><%= link_to 'Show', zlecenie %></td>
+        <td><%= link_to 'Edit', edit_zlecenie_path(zlecenie) %></td>
+        <td><%= link_to 'Destroy', zlecenie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zlecenie', new_zlecenie_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Id_Kont_klient: 1
+  Odmowa: 1
+  Data: 2018-05-06
+
+two:
+  Id_Kont_klient: 1
+  Odmowa: 1
+  Data: 2018-05-06

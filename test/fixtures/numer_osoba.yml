@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Id_Osoba_kont: 1
+  Kontakt: MyString
+  Typ: 1
+  Opis: MyText
+
+two:
+  Id_Osoba_kont: 1
+  Kontakt: MyString
+  Typ: 1
+  Opis: MyText

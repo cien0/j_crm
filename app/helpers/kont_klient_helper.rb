@@ -1,0 +1,2 @@
+module KontKlientHelper
+end

@@ -1,0 +1,53 @@
+<%= form_for(@adres_kontr) do |f| %>
+  <% if @adres_kontr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@adres_kontr.errors.count, "error") %> prohibited this adres_kontr from being saved:</h2>
+
+      <ul>
+      <% @adres_kontr.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Id_Kontrahenci %><br>
+    <%= f.number_field :Id_Kontrahenci %>
+  </div>
+  <div class="field">
+    <%= f.label :Typ %><br>
+    <%= f.number_field :Typ %>
+  </div>
+  <div class="field">
+    <%= f.label :Kraj %><br>
+    <%= f.text_field :Kraj %>
+  </div>
+  <div class="field">
+    <%= f.label :Kod_pocztowy %><br>
+    <%= f.text_field :Kod_pocztowy %>
+  </div>
+  <div class="field">
+    <%= f.label :Miasto %><br>
+    <%= f.text_field :Miasto %>
+  </div>
+  <div class="field">
+    <%= f.label :Skrytka %><br>
+    <%= f.text_field :Skrytka %>
+  </div>
+  <div class="field">
+    <%= f.label :Ulica %><br>
+    <%= f.text_field :Ulica %>
+  </div>
+  <div class="field">
+    <%= f.label :Nr_budynku %><br>
+    <%= f.text_field :Nr_budynku %>
+  </div>
+  <div class="field">
+    <%= f.label :Nr_lokalu %><br>
+    <%= f.text_field :Nr_lokalu %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

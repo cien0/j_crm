@@ -1,0 +1,33 @@
+<%= form_for(@faktury) do |f| %>
+  <% if @faktury.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@faktury.errors.count, "error") %> prohibited this faktury from being saved:</h2>
+
+      <ul>
+      <% @faktury.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Id_kontrahenci %><br>
+    <%= f.number_field :Id_kontrahenci %>
+  </div>
+  <div class="field">
+    <%= f.label :Nr_faktury %><br>
+    <%= f.text_field :Nr_faktury %>
+  </div>
+  <div class="field">
+    <%= f.label :Kwota %><br>
+    <%= f.text_field :Kwota %>
+  </div>
+  <div class="field">
+    <%= f.label :VAT %><br>
+    <%= f.text_field :VAT %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

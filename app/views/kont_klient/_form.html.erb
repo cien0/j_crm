@@ -1,0 +1,41 @@
+<%= form_for(@kont_klient) do |f| %>
+  <% if @kont_klient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kont_klient.errors.count, "error") %> prohibited this kont_klient from being saved:</h2>
+
+      <ul>
+      <% @kont_klient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Id_Kontrahenci %><br>
+    <%= f.number_field :Id_Kontrahenci %>
+  </div>
+  <div class="field">
+    <%= f.label :Data %><br>
+    <%= f.date_select :Data %>
+  </div>
+  <div class="field">
+    <%= f.label :Typ %><br>
+    <%= f.number_field :Typ %>
+  </div>
+  <div class="field">
+    <%= f.label :Cel %><br>
+    <%= f.number_field :Cel %>
+  </div>
+  <div class="field">
+    <%= f.label :Raport %><br>
+    <%= f.text_area :Raport %>
+  </div>
+  <div class="field">
+    <%= f.label :Inf_dodat %><br>
+    <%= f.text_area :Inf_dodat %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

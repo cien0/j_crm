@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Id_Kierownik: 1
+  Id_Opiekun: 1
+  Data_utworzenia: 2018-05-06
+  Data_zlecenia: 2018-05-06
+  Typ: 1
+  Opis: MyString
+  Status: 1
+  Raport: MyText
+  Info: MyText
+
+two:
+  Id_Kierownik: 1
+  Id_Opiekun: 1
+  Data_utworzenia: 2018-05-06
+  Data_zlecenia: 2018-05-06
+  Typ: 1
+  Opis: MyString
+  Status: 1
+  Raport: MyText
+  Info: MyText

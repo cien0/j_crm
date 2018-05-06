@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
+  resources :kontrahenci
+  resources :adres_kontr
+  resources :status
+  resources :inf_dodatka_kontr
+  resources :osoba_kont
+  resources :adres_osoba
+  resources :numer_osoba
+  resources :kont_klient
+  resources :dost_marketingowe
+  resources :opiekun
+  resources :kierownik
+  resources :odmowa
+  resources :zlecenie
+  resources :faktury
+  resources :obroty
+    # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

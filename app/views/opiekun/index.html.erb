@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Opiekun</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Imie</th>
+      <th>Nazwisko</th>
+      <th>Login</th>
+      <th>Aktywny</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opiekun.each do |opiekun| %>
+      <tr>
+        <td><%= opiekun.Imie %></td>
+        <td><%= opiekun.Nazwisko %></td>
+        <td><%= opiekun.Login %></td>
+        <td><%= opiekun.Aktywny %></td>
+        <td><%= link_to 'Show', opiekun %></td>
+        <td><%= link_to 'Edit', edit_opiekun_path(opiekun) %></td>
+        <td><%= link_to 'Destroy', opiekun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Opiekun', new_opiekun_path %>

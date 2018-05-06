@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Kierownik</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Imie</th>
+      <th>Nazwisko</th>
+      <th>Login</th>
+      <th>Aktywny</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kierownik.each do |kierownik| %>
+      <tr>
+        <td><%= kierownik.Imie %></td>
+        <td><%= kierownik.Nazwisko %></td>
+        <td><%= kierownik.Login %></td>
+        <td><%= kierownik.Aktywny %></td>
+        <td><%= link_to 'Show', kierownik %></td>
+        <td><%= link_to 'Edit', edit_kierownik_path(kierownik) %></td>
+        <td><%= link_to 'Destroy', kierownik, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kierownik', new_kierownik_path %>

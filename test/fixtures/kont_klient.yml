@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Id_Kontrahenci: 1
+  Data: 2018-05-06
+  Typ: 1
+  Cel: 1
+  Raport: MyText
+  Inf_dodat: MyText
+
+two:
+  Id_Kontrahenci: 1
+  Data: 2018-05-06
+  Typ: 1
+  Cel: 1
+  Raport: MyText
+  Inf_dodat: MyText

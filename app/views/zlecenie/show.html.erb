@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id kierownik:</strong>
+  <%= @zlecenie.Id_Kierownik %>
+</p>
+
+<p>
+  <strong>Id opiekun:</strong>
+  <%= @zlecenie.Id_Opiekun %>
+</p>
+
+<p>
+  <strong>Data utworzenia:</strong>
+  <%= @zlecenie.Data_utworzenia %>
+</p>
+
+<p>
+  <strong>Data zlecenia:</strong>
+  <%= @zlecenie.Data_zlecenia %>
+</p>
+
+<p>
+  <strong>Typ:</strong>
+  <%= @zlecenie.Typ %>
+</p>
+
+<p>
+  <strong>Opis:</strong>
+  <%= @zlecenie.Opis %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @zlecenie.Status %>
+</p>
+
+<p>
+  <strong>Raport:</strong>
+  <%= @zlecenie.Raport %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @zlecenie.Info %>
+</p>
+
+<%= link_to 'Edit', edit_zlecenie_path(@zlecenie) %> |
+<%= link_to 'Back', zlecenie_index_path %>

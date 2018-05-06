@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id kontrahenci:</strong>
+  <%= @faktury.Id_kontrahenci %>
+</p>
+
+<p>
+  <strong>Nr faktury:</strong>
+  <%= @faktury.Nr_faktury %>
+</p>
+
+<p>
+  <strong>Kwota:</strong>
+  <%= @faktury.Kwota %>
+</p>
+
+<p>
+  <strong>Vat:</strong>
+  <%= @faktury.VAT %>
+</p>
+
+<%= link_to 'Edit', edit_faktury_path(@faktury) %> |
+<%= link_to 'Back', faktury_index_path %>

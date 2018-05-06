@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id kont klient:</strong>
+  <%= @odmowa.Id_Kont_klient %>
+</p>
+
+<p>
+  <strong>Odmowa:</strong>
+  <%= @odmowa.Odmowa %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @odmowa.Data %>
+</p>
+
+<%= link_to 'Edit', edit_odmowa_path(@odmowa) %> |
+<%= link_to 'Back', odmowa_index_path %>

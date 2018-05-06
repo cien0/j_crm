@@ -1,0 +1,53 @@
+<%= form_for(@zlecenie) do |f| %>
+  <% if @zlecenie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@zlecenie.errors.count, "error") %> prohibited this zlecenie from being saved:</h2>
+
+      <ul>
+      <% @zlecenie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Id_Kierownik %><br>
+    <%= f.number_field :Id_Kierownik %>
+  </div>
+  <div class="field">
+    <%= f.label :Id_Opiekun %><br>
+    <%= f.number_field :Id_Opiekun %>
+  </div>
+  <div class="field">
+    <%= f.label :Data_utworzenia %><br>
+    <%= f.date_select :Data_utworzenia %>
+  </div>
+  <div class="field">
+    <%= f.label :Data_zlecenia %><br>
+    <%= f.date_select :Data_zlecenia %>
+  </div>
+  <div class="field">
+    <%= f.label :Typ %><br>
+    <%= f.number_field :Typ %>
+  </div>
+  <div class="field">
+    <%= f.label :Opis %><br>
+    <%= f.text_field :Opis %>
+  </div>
+  <div class="field">
+    <%= f.label :Status %><br>
+    <%= f.number_field :Status %>
+  </div>
+  <div class="field">
+    <%= f.label :Raport %><br>
+    <%= f.text_area :Raport %>
+  </div>
+  <div class="field">
+    <%= f.label :Info %><br>
+    <%= f.text_area :Info %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id kontrahenci:</strong>
+  <%= @adres_kontr.Id_Kontrahenci %>
+</p>
+
+<p>
+  <strong>Typ:</strong>
+  <%= @adres_kontr.Typ %>
+</p>
+
+<p>
+  <strong>Kraj:</strong>
+  <%= @adres_kontr.Kraj %>
+</p>
+
+<p>
+  <strong>Kod pocztowy:</strong>
+  <%= @adres_kontr.Kod_pocztowy %>
+</p>
+
+<p>
+  <strong>Miasto:</strong>
+  <%= @adres_kontr.Miasto %>
+</p>
+
+<p>
+  <strong>Skrytka:</strong>
+  <%= @adres_kontr.Skrytka %>
+</p>
+
+<p>
+  <strong>Ulica:</strong>
+  <%= @adres_kontr.Ulica %>
+</p>
+
+<p>
+  <strong>Nr budynku:</strong>
+  <%= @adres_kontr.Nr_budynku %>
+</p>
+
+<p>
+  <strong>Nr lokalu:</strong>
+  <%= @adres_kontr.Nr_lokalu %>
+</p>
+
+<%= link_to 'Edit', edit_adres_kontr_path(@adres_kontr) %> |
+<%= link_to 'Back', adres_kontr_index_path %>

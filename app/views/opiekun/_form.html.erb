@@ -1,0 +1,33 @@
+<%= form_for(@opiekun) do |f| %>
+  <% if @opiekun.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@opiekun.errors.count, "error") %> prohibited this opiekun from being saved:</h2>
+
+      <ul>
+      <% @opiekun.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Imie %><br>
+    <%= f.text_field :Imie %>
+  </div>
+  <div class="field">
+    <%= f.label :Nazwisko %><br>
+    <%= f.text_field :Nazwisko %>
+  </div>
+  <div class="field">
+    <%= f.label :Login %><br>
+    <%= f.text_field :Login %>
+  </div>
+  <div class="field">
+    <%= f.label :Aktywny %><br>
+    <%= f.check_box :Aktywny %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

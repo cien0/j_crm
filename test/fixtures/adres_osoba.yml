@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Id_Osoba_kont: 1
+  Typ: 1
+  Kraj: MyString
+  Kod_pocztowy: MyString
+  Miasto: MyString
+  Skrytka: MyString
+  Ulica: MyString
+  Nr_budynku: MyString
+  Nr_lokalu: MyString
+  Opis: MyText
+
+two:
+  Id_Osoba_kont: 1
+  Typ: 1
+  Kraj: MyString
+  Kod_pocztowy: MyString
+  Miasto: MyString
+  Skrytka: MyString
+  Ulica: MyString
+  Nr_budynku: MyString
+  Nr_lokalu: MyString
+  Opis: MyText

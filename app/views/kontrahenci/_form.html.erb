@@ -1,0 +1,49 @@
+<%= form_for(@kontrahenci) do |f| %>
+  <% if @kontrahenci.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kontrahenci.errors.count, "error") %> prohibited this kontrahenci from being saved:</h2>
+
+      <ul>
+      <% @kontrahenci.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Id_system %><br>
+    <%= f.number_field :Id_system %>
+  </div>
+  <div class="field">
+    <%= f.label :Nazwa %><br>
+    <%= f.text_field :Nazwa %>
+  </div>
+  <div class="field">
+    <%= f.label :NIP %><br>
+    <%= f.text_field :NIP %>
+  </div>
+  <div class="field">
+    <%= f.label :WWW %><br>
+    <%= f.text_field :WWW %>
+  </div>
+  <div class="field">
+    <%= f.label :Numer_tel %><br>
+    <%= f.text_field :Numer_tel %>
+  </div>
+  <div class="field">
+    <%= f.label :Numer_fak %><br>
+    <%= f.text_field :Numer_fak %>
+  </div>
+  <div class="field">
+    <%= f.label :Email %><br>
+    <%= f.text_field :Email %>
+  </div>
+  <div class="field">
+    <%= f.label :Id_opiekun %><br>
+    <%= f.number_field :Id_opiekun %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

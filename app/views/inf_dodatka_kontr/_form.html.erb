@@ -1,0 +1,25 @@
+<%= form_for(@inf_dodatka_kontr) do |f| %>
+  <% if @inf_dodatka_kontr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inf_dodatka_kontr.errors.count, "error") %> prohibited this inf_dodatka_kontr from being saved:</h2>
+
+      <ul>
+      <% @inf_dodatka_kontr.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Id_Kontrahenci %><br>
+    <%= f.number_field :Id_Kontrahenci %>
+  </div>
+  <div class="field">
+    <%= f.label :Inf_dodatkowa %><br>
+    <%= f.text_area :Inf_dodatkowa %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<%= form_for(@odmowa) do |f| %>
+  <% if @odmowa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@odmowa.errors.count, "error") %> prohibited this odmowa from being saved:</h2>
+
+      <ul>
+      <% @odmowa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Id_Kont_klient %><br>
+    <%= f.number_field :Id_Kont_klient %>
+  </div>
+  <div class="field">
+    <%= f.label :Odmowa %><br>
+    <%= f.number_field :Odmowa %>
+  </div>
+  <div class="field">
+    <%= f.label :Data %><br>
+    <%= f.date_select :Data %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module KontrahenciHelper
+end

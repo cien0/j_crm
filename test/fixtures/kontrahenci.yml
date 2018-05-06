@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Id_system: 1
+  Nazwa: MyString
+  NIP: MyString
+  WWW: MyString
+  Numer_tel: MyString
+  Numer_fak: MyString
+  Email: MyString
+  Id_opiekun: 1
+
+two:
+  Id_system: 1
+  Nazwa: MyString
+  NIP: MyString
+  WWW: MyString
+  Numer_tel: MyString
+  Numer_fak: MyString
+  Email: MyString
+  Id_opiekun: 1

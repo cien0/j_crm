@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id osoba kont:</strong>
+  <%= @numer_osoba.Id_Osoba_kont %>
+</p>
+
+<p>
+  <strong>Kontakt:</strong>
+  <%= @numer_osoba.Kontakt %>
+</p>
+
+<p>
+  <strong>Typ:</strong>
+  <%= @numer_osoba.Typ %>
+</p>
+
+<p>
+  <strong>Opis:</strong>
+  <%= @numer_osoba.Opis %>
+</p>
+
+<%= link_to 'Edit', edit_numer_osoba_path(@numer_osoba) %> |
+<%= link_to 'Back', numer_osoba_index_path %>

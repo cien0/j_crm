@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Kont Klient</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id kontrahenci</th>
+      <th>Data</th>
+      <th>Typ</th>
+      <th>Cel</th>
+      <th>Raport</th>
+      <th>Inf dodat</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kont_klient.each do |kont_klient| %>
+      <tr>
+        <td><%= kont_klient.Id_Kontrahenci %></td>
+        <td><%= kont_klient.Data %></td>
+        <td><%= kont_klient.Typ %></td>
+        <td><%= kont_klient.Cel %></td>
+        <td><%= kont_klient.Raport %></td>
+        <td><%= kont_klient.Inf_dodat %></td>
+        <td><%= link_to 'Show', kont_klient %></td>
+        <td><%= link_to 'Edit', edit_kont_klient_path(kont_klient) %></td>
+        <td><%= link_to 'Destroy', kont_klient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kont klient', new_kont_klient_path %>

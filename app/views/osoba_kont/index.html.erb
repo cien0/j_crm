@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Osoba Kont</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Imie</th>
+      <th>Imiona</th>
+      <th>Nazwisko</th>
+      <th>Data urodz</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @osoba_kont.each do |osoba_kont| %>
+      <tr>
+        <td><%= osoba_kont.Imie %></td>
+        <td><%= osoba_kont.Imiona %></td>
+        <td><%= osoba_kont.Nazwisko %></td>
+        <td><%= osoba_kont.Data_urodz %></td>
+        <td><%= link_to 'Show', osoba_kont %></td>
+        <td><%= link_to 'Edit', edit_osoba_kont_path(osoba_kont) %></td>
+        <td><%= link_to 'Destroy', osoba_kont, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Osoba kont', new_osoba_kont_path %>

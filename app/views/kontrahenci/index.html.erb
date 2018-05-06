@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Kontrahenci</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id system</th>
+      <th>Nazwa</th>
+      <th>Nip</th>
+      <th>Www</th>
+      <th>Numer tel</th>
+      <th>Numer fak</th>
+      <th>Email</th>
+      <th>Id opiekun</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kontrahenci.each do |kontrahenci| %>
+      <tr>
+        <td><%= kontrahenci.Id_system %></td>
+        <td><%= kontrahenci.Nazwa %></td>
+        <td><%= kontrahenci.NIP %></td>
+        <td><%= kontrahenci.WWW %></td>
+        <td><%= kontrahenci.Numer_tel %></td>
+        <td><%= kontrahenci.Numer_fak %></td>
+        <td><%= kontrahenci.Email %></td>
+        <td><%= kontrahenci.Id_opiekun %></td>
+        <td><%= link_to 'Show', kontrahenci %></td>
+        <td><%= link_to 'Edit', edit_kontrahenci_path(kontrahenci) %></td>
+        <td><%= link_to 'Destroy', kontrahenci, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kontrahenci', new_kontrahenci_path %>

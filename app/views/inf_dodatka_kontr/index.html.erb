@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Inf Dodatka Kontr</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id kontrahenci</th>
+      <th>Inf dodatkowa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inf_dodatka_kontr.each do |inf_dodatka_kontr| %>
+      <tr>
+        <td><%= inf_dodatka_kontr.Id_Kontrahenci %></td>
+        <td><%= inf_dodatka_kontr.Inf_dodatkowa %></td>
+        <td><%= link_to 'Show', inf_dodatka_kontr %></td>
+        <td><%= link_to 'Edit', edit_inf_dodatka_kontr_path(inf_dodatka_kontr) %></td>
+        <td><%= link_to 'Destroy', inf_dodatka_kontr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inf dodatka kontr', new_inf_dodatka_kontr_path %>

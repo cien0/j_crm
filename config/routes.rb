@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :user
   root 'home#index'
-
+  get '/user/sign_out' => 'devise/sessions#destroy'
+  get '/user/sign_in' => 'devise/sessions#create'
   resources :kontrahenci
   resources :adres_kontr
   resources :status

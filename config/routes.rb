@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :user
+  devise_for :user,  :path_prefix =>'auth'
   root 'home#index'
   get '/user/sign_out' => 'devise/sessions#destroy'
   get '/user/sign_in' => 'devise/sessions#create'

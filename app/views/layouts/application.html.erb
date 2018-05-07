@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= favicon_link_tag 'favicon.png' %>
   <title>Workspace</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -8,12 +9,16 @@
 </head>
 <body>
 <div class="container">
-  
-  <% flash.each do |name,msg| %>
+<%= render 'home/header' %>
+</div>
+<div class="container">
+<div class="jumbotron">
+    <% flash.each do |name,msg| %>
   <%= content_tag(:div, msg, class: "alert alert-info") %>
   <% end %>
   
 <%= yield %>
+</div>
 </div>
 </body>
 </html>

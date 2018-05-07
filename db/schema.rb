@@ -151,7 +151,6 @@ ActiveRecord::Schema.define(version: 20180507063605) do
   end
 
   create_table "user", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
     t.string   "username",               default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -166,7 +165,6 @@ ActiveRecord::Schema.define(version: 20180507063605) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "user", ["email"], name: "index_user_on_email", unique: true
   add_index "user", ["reset_password_token"], name: "index_user_on_reset_password_token", unique: true
   add_index "user", ["username"], name: "index_user_on_username", unique: true
 

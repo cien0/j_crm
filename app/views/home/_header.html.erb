@@ -32,7 +32,7 @@
                     <% if user_signed_in? %>
                     <%# czy yżytkownikiem jest administrator %>
                     <% if @currentUser  = 1 %>
-                    <%= link_to('Nowy użytkownik', new_user_registration_path) %>
+                    <%= link_to('Edycja użytkowników', opiekun_index_path) %>
                     <%# czy uzytkownikiem jest kierownik %>
                     <% elsif @currentUser  = 2 %>
                     <%#jezeli inny uzytkownik  %>

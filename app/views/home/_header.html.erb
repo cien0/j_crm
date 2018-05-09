@@ -1,24 +1,45 @@
 
-<img src="<%= image_path("logo.png") %>" alt="j-crm"/>
-
-<%# Czy użytkownik jest zalogowany %>
-<% if user_signed_in? %>
-<%# czy yżytkownikiem jest administrator %>
-<% if @currentUser  = 1 %>
-<%= link_to('Nowy użytkownik', new_user_registration_path) %>
-
-<%# czy uzytkownikiem jest kierownik %>
-<% elsif @currentUser  = 2 %>
-<%#jezeli inny uzytkownik  %>
-<% else %>
-
-<%end%>
-<%# logowanie i wylogowywanie %>
-  <%= "Customer name: #{@currentName} "%>
-  
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
-  <%= link_to('Nowy użytkownik', new_user_registration_path) %>
-  <% else %>
-  <%= link_to('Login', new_user_session_path)  %>  
-<% end %>
-<%# koniec paska nawigacyjnego %>
+<div class="row">
+    <div class="col-md-2">
+        <div>
+            <%= link_to image_tag('logo.png', width: '100', height: '75', alt: 'Logo'), '/', title: 'Logo', relative: true, class: "btn btn-link " %>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="pull-right">
+                <% if user_signed_in? %>
+                <%# logowanie i wylogowywanie %>
+                <p class="btn">
+                <%= "Zalogowany: #{@currentName} "%>
+                </p>
+                <p class="btn btn-link">
+                <%= link_to('Logout', destroy_user_session_path, method: :delete,  class: "btn btn-link") %> 
+                </p>
+                <% else %>
+                <div class="btn btn-link">
+                <%= link_to 'Login', new_user_session_path, class: "btn btn-link"  %>  
+                </div>
+                <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <div>
+                    <%# Czy użytkownik jest zalogowany %>
+                    <% if user_signed_in? %>
+                    <%# czy yżytkownikiem jest administrator %>
+                    <% if @currentUser  = 1 %>
+                    <%= link_to('Nowy użytkownik', new_user_registration_path) %>
+                    <%# czy uzytkownikiem jest kierownik %>
+                    <% elsif @currentUser  = 2 %>
+                    <%#jezeli inny uzytkownik  %>
+                    <% else %>
+                    <% end %>
+                    <% end %>
+            </div>
+    </div>
+</div>
+</div>

@@ -1,8 +1,11 @@
 class OpiekunController < ApplicationController
+  
   before_action :set_opiekun, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
-  before_action :current_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!
+  before_action :authenticate_user! 
+  
+ 
+  
   # GET /opiekun
   # GET /opiekun.json
   def index
@@ -68,14 +71,28 @@ class OpiekunController < ApplicationController
     end
   end
 
+
+
+def authenticate_admin!
+    # check if current user is admin
+    if current_user.id != 1 then
+    logger.debug {user_signed_in?}
+      # if current_user is not admin redirect to some route
+      redirect_to '/'
+    end
+    # if current_user is admin he will proceed to edit action
+end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_opiekun
-      @opiekun = Opiekun.find(params[:id])
+      logger.debug "set_opiekun"
+        @opiekun = Opiekun.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def opiekun_params
-      params.require(:opiekun).permit(:Imie, :Nazwisko, :Login, :Aktywny)
+        params.require(:opiekun).permit(:Imie, :Nazwisko, :Login, :Aktywny)
     end
 end
+

@@ -1,0 +1,9 @@
+#config/locales/pl.yml
+pl:
+activerecord:
+  models:
+    place: "Opiekun"
+  successful:
+    messages:
+      created: "%{model_name} został stworzony."
+      updated: "%{model_name} został zaktualizowany."

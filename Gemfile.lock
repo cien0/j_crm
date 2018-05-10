@@ -183,9 +183,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap (~> 4.1.1)
+  bootstrap (~> 4.1, >= 4.1.1)
   bootstrap-navbar (~> 3.0, >= 3.0.3)
-  bootstrap-sass (~> 3.3.7)
+  bootstrap-sass (~> 3.3, >= 3.3.7)
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 3.5, >= 3.5.2)

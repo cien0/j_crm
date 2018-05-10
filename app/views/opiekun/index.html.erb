@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Opiekun</h1>
+<h1>Lista opiekunów</h1>
 
 <table>
   <thead>
@@ -20,9 +20,9 @@
         <td><%= opiekun.Nazwisko %></td>
         <td><%= opiekun.Login %></td>
         <td><%= opiekun.Aktywny %></td>
-        <td><%= link_to 'Show', opiekun %></td>
-        <td><%= link_to 'Edit', edit_opiekun_path(opiekun) %></td>
-        <td><%= link_to 'Destroy', opiekun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Pokaż', opiekun ,  class: "btn btn-link"%></td>
+        <td><%= link_to 'Edytuj', edit_opiekun_path(opiekun),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Skasuj', opiekun, method: :delete, data: { confirm: 'Czy jesteś pewny?' },  class: "btn btn-link" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Opiekun', new_opiekun_path %>
+<%= link_to 'Nowy opiekun', new_opiekun_path ,  class: "btn btn-link"%>

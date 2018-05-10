@@ -1,11 +1,18 @@
 class OpiekunController < ApplicationController
   before_action :set_opiekun, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :current_user, only: [:show, :edit, :update, :destroy]
 
   # GET /opiekun
   # GET /opiekun.json
   def index
     @opiekun = Opiekun.all
+    if user_signed_in? then
+    @currentUser = current_user.id
+    @currentName = current_user.username
+    end 
   end
+  
 
   # GET /opiekun/1
   # GET /opiekun/1.json
@@ -28,7 +35,7 @@ class OpiekunController < ApplicationController
 
     respond_to do |format|
       if @opiekun.save
-        format.html { redirect_to @opiekun, notice: 'Opiekun was successfully created.' }
+        format.html { redirect_to @opiekun, notice: 'Opiekun został stworzony.' }
         format.json { render :show, status: :created, location: @opiekun }
       else
         format.html { render :new }
@@ -42,7 +49,7 @@ class OpiekunController < ApplicationController
   def update
     respond_to do |format|
       if @opiekun.update(opiekun_params)
-        format.html { redirect_to @opiekun, notice: 'Opiekun was successfully updated.' }
+        format.html { redirect_to @opiekun, notice: 'Opiekun został zaktualizowany.' }
         format.json { render :show, status: :ok, location: @opiekun }
       else
         format.html { render :edit }
@@ -56,7 +63,7 @@ class OpiekunController < ApplicationController
   def destroy
     @opiekun.destroy
     respond_to do |format|
-      format.html { redirect_to opiekun_index_url, notice: 'Opiekun was successfully destroyed.' }
+      format.html { redirect_to opiekun_index_url, notice: 'Opiekun został usunięty.' }
       format.json { head :no_content }
     end
   end

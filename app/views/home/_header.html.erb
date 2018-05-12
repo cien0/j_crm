@@ -30,6 +30,8 @@
                     <%# czy uzytkownikiem jest administrator %>
                     <% if @currentUser  = 1 %>
                     <%= link_to('Edycja użytkowników', opiekun_index_path,  class: "btn btn-link") %>
+                    <%= link_to('Import kontrahentów', load_kontrahenci_upload_path,  class: "btn btn-link") %>
+                    
                     <%# czy uzytkownikiem jest kierownik %>
                     <% elsif @currentUser  = 2 %>
                     <%#jezeli inny uzytkownik  %>

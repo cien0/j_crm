@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507063605) do
+ActiveRecord::Schema.define(version: 20180511101910) do
 
   create_table "adres_kontr", force: :cascade do |t|
     t.integer  "Id_Kontrahenci"
@@ -95,6 +95,11 @@ ActiveRecord::Schema.define(version: 20180507063605) do
     t.string   "Numer_fak"
     t.string   "Email"
     t.integer  "Id_opiekun"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "load_kontrahenci", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

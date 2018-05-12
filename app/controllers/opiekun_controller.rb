@@ -76,7 +76,7 @@ class OpiekunController < ApplicationController
 def authenticate_admin!
     # check if current user is admin
     if current_user.id != 1 then
-    logger.debug {user_signed_in?}
+    #logger.debug {user_signed_in?}
       # if current_user is not admin redirect to some route
       redirect_to '/'
     end
@@ -86,8 +86,7 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_opiekun
-      logger.debug "set_opiekun"
-        @opiekun = Opiekun.find(params[:id])
+          @opiekun = Opiekun.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

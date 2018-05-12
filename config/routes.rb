@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  
   devise_for :user,  :path_prefix =>'auth'
   root 'home#index'
-  get '/user/sign_out' => 'devise/sessions#destroy'
-  get '/user/sign_in' => 'devise/sessions#create'
+  get '/user/sign_out', to: 'devise/sessions#destroy'
+  get '/user/sign_in', to: 'devise/sessions#create'
+  get 'load_kontrahenci/show'
+  get 'load_kontrahenci/upload'
+  post 'load_kontrahenci/upload'
+  get 'load_kontrahenci/create'
+  
   resources :kontrahenci
   resources :adres_kontr
   resources :status

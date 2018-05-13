@@ -1,2 +1,13 @@
-<h1>LoadKontrahenci#upload</h1>
-<p>Find me in app/views/load_kontrahenci/upload.html.erb</p>
+<div class="title heading">Import pliku CSV z danymi kontrahentów</div>
+</br>
+</br>
+</br>
+
+<div>
+
+<%= form_tag({action: :upload}, multipart: true) do %>
+<%= file_field_tag "csv_file", class: "profile_input" %>
+<%= submit_tag 'Wyślij' %>
+<% end %>
+
+</div>

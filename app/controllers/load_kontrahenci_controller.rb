@@ -2,30 +2,17 @@ class LoadKontrahenciController < ApplicationController
 
   before_action :authenticate_admin!
   before_action :authenticate_user!
-
-def new_import
-end
-
-def new
-end
-
-def create
-      @load_kontrahenci = LoadKontrahenci.new(params[:post].permit(:title, :text, :user, :screen))
-
-      if @load_kontrahenci.save
-        redirect_to load_kontrahenci_upload_path
-      else
-        render 'new'
-      end
-end
   
 def upload
-        
-        uploaded_io = params[:file]
-        File.open(Rails.root.join('public', 'uploads', 'kontrahenci.csv'), 'wb') do |file|
-           file.write(uploaded_io)
-         end
+  uploaded_io = params[:csv_file]
+if uploaded_io then
+  File.open(Rails.root.join('public','uploads', 'kontrahenci.csv'), 'wb') do |file|
+    file.write(uploaded_io.read)
+    redirect_to load_kontrahenci_show_path :notice => "Plik został zaimportowany!"
 end
+end
+end
+
 
 def authenticate_admin!
     # check if current user is admin

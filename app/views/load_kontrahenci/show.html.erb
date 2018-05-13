@@ -1,2 +1,6 @@
 <h1>LoadKontrahenci#show</h1>
-<p>Find me in app/views/load_kontrahenci/show.html.erb</p>
+<#% LoadKontrahenci.import(Rails.root.join('public','uploads', 'kontrahenci.csv')) %>
+
+<% logger.info('Starting to load the vehicle data from db/vehicles.csv ...') %>
+<%= LoadKontrahenci.import! %>
+<% logger.info('Done loading the vehicle data from db/vehicles.csv!') %>

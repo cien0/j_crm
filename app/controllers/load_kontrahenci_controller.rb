@@ -8,10 +8,11 @@ def upload
 if uploaded_io then
   File.open(Rails.root.join('public','uploads', 'kontrahenci.csv'), 'wb') do |file|
     file.write(uploaded_io.read)
-    redirect_to load_kontrahenci_show_path :notice => "Plik został zaimportowany!"
+    redirect_to load_kontrahenci_show_path
 end
 end
 end
+
 
 
 def authenticate_admin!

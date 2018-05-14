@@ -4,7 +4,7 @@ class KontrahenciController < ApplicationController
   # GET /kontrahenci
   # GET /kontrahenci.json
   def index
-    @kontrahenci = Kontrahenci.all
+    @kontrahenci = Kontrahenci.all.paginate(:page => params[:page])
   end
 
   # GET /kontrahenci/1
@@ -69,6 +69,6 @@ class KontrahenciController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kontrahenci_params
-      params.require(:kontrahenci).permit(:Id_system, :Nazwa, :NIP, :WWW, :Numer_tel, :Numer_fak, :Email, :Id_opiekun)
+      params.require(:kontrahenci).permit(:system_id, :nazwa, :nip, :www, :numer_tel, :numer_fak, :email, :opiekun_id)
     end
 end

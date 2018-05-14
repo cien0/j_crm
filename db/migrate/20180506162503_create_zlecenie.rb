@@ -1,15 +1,15 @@
 class CreateZlecenie < ActiveRecord::Migration
   def change
     create_table :zlecenie do |t|
-      t.integer :Id_Kierownik
-      t.integer :Id_Opiekun
-      t.date :Data_utworzenia
-      t.date :Data_zlecenia
-      t.integer :Typ
-      t.string :Opis
-      t.integer :Status
-      t.text :Raport
-      t.text :Info
+      t.integer :kierownik_id
+      t.integer :opiekun_id
+      t.date :datata_utworzenia
+      t.date :data_zlecenia
+      t.integer :typ
+      t.string :opis
+      t.integer :status
+      t.text :raport
+      t.text :info
 
       t.timestamps null: false
     end

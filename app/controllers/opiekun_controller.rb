@@ -91,7 +91,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def opiekun_params
-        params.require(:opiekun).permit(:Imie, :Nazwisko, :Login, :Aktywny)
+        params.require(:opiekun).permit(:imie, :nazwisko, :login, :aktywny)
     end
 end
 

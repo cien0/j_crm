@@ -1,9 +1,9 @@
 class CreateOdmowa < ActiveRecord::Migration
   def change
     create_table :odmowa do |t|
-      t.integer :Id_Kont_klient
-      t.integer :Odmowa
-      t.date :Data
+      t.integer :kont_klient_id
+      t.integer :odmowa
+      t.date :data
 
       t.timestamps null: false
     end

@@ -1,11 +1,10 @@
 class CreateFaktury < ActiveRecord::Migration
   def change
     create_table :faktury do |t|
-      t.integer :Id_kontrahenci
-      t.string :Nr_faktury
-      t.decimal :Kwota
-      t.decimal :VAT
-
+      t.integer :kontrahenci_id
+      t.string :nr_faktury
+      t.decimal :kwota
+      t.decimal :vat
       t.timestamps null: false
     end
   end

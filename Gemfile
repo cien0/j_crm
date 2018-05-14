@@ -28,6 +28,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'rails-i18n', '~> 4.0'
 gem 'pry-byebug', '~> 3.6'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

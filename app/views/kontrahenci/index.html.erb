@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Kontrahenci</h1>
-
+<%= will_paginate @kontrahenci %>
 <table>
   <thead>
     <tr>
@@ -20,14 +20,14 @@
   <tbody>
     <% @kontrahenci.each do |kontrahenci| %>
       <tr>
-        <td><%= kontrahenci.Id_system %></td>
-        <td><%= kontrahenci.Nazwa %></td>
-        <td><%= kontrahenci.NIP %></td>
-        <td><%= kontrahenci.WWW %></td>
-        <td><%= kontrahenci.Numer_tel %></td>
-        <td><%= kontrahenci.Numer_fak %></td>
-        <td><%= kontrahenci.Email %></td>
-        <td><%= kontrahenci.Id_opiekun %></td>
+        <td><%= kontrahenci.system_id %></td>
+        <td><%= kontrahenci.nazwa %></td>
+        <td><%= kontrahenci.nip %></td>
+        <td><%= kontrahenci.www %></td>
+        <td><%= kontrahenci.numer_tel %></td>
+        <td><%= kontrahenci.numer_fak %></td>
+        <td><%= kontrahenci.email %></td>
+        <td><%= kontrahenci.opiekun_id %></td>
         <td><%= link_to 'Show', kontrahenci %></td>
         <td><%= link_to 'Edit', edit_kontrahenci_path(kontrahenci) %></td>
         <td><%= link_to 'Destroy', kontrahenci, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -39,3 +39,5 @@
 <br>
 
 <%= link_to 'New Kontrahenci', new_kontrahenci_path %>
+
+<%= will_paginate @kontrahenci %>

@@ -1,10 +1,10 @@
 class CreateNumerOsoba < ActiveRecord::Migration
   def change
     create_table :numer_osoba do |t|
-      t.integer :Id_Osoba_kont
-      t.string :Kontakt
-      t.integer :Typ
-      t.text :Opis
+      t.integer :osoba_kont_id
+      t.string :kontakt
+      t.integer :typ
+      t.text :opis
 
       t.timestamps null: false
     end

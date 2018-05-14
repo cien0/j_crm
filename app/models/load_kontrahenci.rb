@@ -20,9 +20,8 @@ def self.import!
     options = {:encoding => 'windows-1250:utf-8', :skip_blanks => true, :headers => false, :col_sep => ";"}
     CSV.foreach(Rails.root.join('public','uploads', 'kontrahenci.csv'), options ) do |row|
    puts row[0]
-   unless Kontrahenci.exists?(Id_system: row[0])
-          Kontrahenci.create!(:Id_system => row[0], :Nazwa => row[1], :NIP => row[2], :WWW => row[3], :Numer_tel => row[4], :Numer_fak => row[5], :Email => row[6], :Id_opiekun => row[7])
-          
+   unless Kontrahenci.exists?(system_id: row[0])
+          Kontrahenci.create!(:system_id => row[0], :nazwa => row[1], :nip => row[2], :www => row[3], :numer_tel => row[4], :numer_fak => row[5], :email => row[6], :opiekun_id => Opiekun.find_by(login: row[7] ).id)
    end
    end
 end

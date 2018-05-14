@@ -1,2 +1,2 @@
-json.extract! opiekun, :id, :Imie, :Nazwisko, :Login, :Aktywny, :created_at, :updated_at
+json.extract! opiekun, :id, :imie, :nazwisko, :login, :aktywny, :created_at, :updated_at
 json.url opiekun_url(opiekun, format: :json)

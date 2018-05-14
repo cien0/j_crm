@@ -1,8 +1,8 @@
 class CreateStatus < ActiveRecord::Migration
   def change
     create_table :status do |t|
-      t.integer :Id_kontrahenci
-      t.integer :Status
+      t.integer :kontrahenci_id
+      t.integer :status
 
       t.timestamps null: false
     end

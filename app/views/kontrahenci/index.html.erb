@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Kontrahenci</h1>
+</br>
+<div class="digg_pagination">
 <%= will_paginate @kontrahenci %>
-<table>
+</div>
+</br>
+<table class="table-bordered table-striped table-hover">
   <thead>
     <tr>
-      <th>Id system</th>
+      <th>Id</th>
       <th>Nazwa</th>
       <th>Nip</th>
-      <th>Www</th>
-      <th>Numer tel</th>
-      <th>Numer fak</th>
-      <th>Email</th>
       <th>Id opiekun</th>
       <th colspan="3"></th>
     </tr>
@@ -23,11 +23,7 @@
         <td><%= kontrahenci.system_id %></td>
         <td><%= kontrahenci.nazwa %></td>
         <td><%= kontrahenci.nip %></td>
-        <td><%= kontrahenci.www %></td>
-        <td><%= kontrahenci.numer_tel %></td>
-        <td><%= kontrahenci.numer_fak %></td>
-        <td><%= kontrahenci.email %></td>
-        <td><%= kontrahenci.opiekun_id %></td>
+        <td><%= Opiekun.find_by(id: kontrahenci.opiekun_id ).login %></td>
         <td><%= link_to 'Show', kontrahenci %></td>
         <td><%= link_to 'Edit', edit_kontrahenci_path(kontrahenci) %></td>
         <td><%= link_to 'Destroy', kontrahenci, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -39,5 +35,8 @@
 <br>
 
 <%= link_to 'New Kontrahenci', new_kontrahenci_path %>
-
+</br>
+</br>
+<div class="digg_pagination">
 <%= will_paginate @kontrahenci %>
+</div>

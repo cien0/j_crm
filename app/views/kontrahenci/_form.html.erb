@@ -41,8 +41,9 @@
   </div>
   <div class="field">
     <%= f.label :opiekun_id %><br>
-    <%= f.number_field :opiekun_id %>
-  </div>
+    <%= select_tag(:opiekun_id, options_from_collection_for_select(Opiekun.select("id,login"), 'id', 'login', @kontrahenci.opiekun_id.to_s), :prompt => "")  %>
+    </div>
+    
   <div class="actions">
     <%= f.submit %>
   </div>

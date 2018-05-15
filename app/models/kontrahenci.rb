@@ -1,12 +1,11 @@
 class Kontrahenci < ActiveRecord::Base
     has_one :opiekun
 
-
-def text_for_payment_status
+def opiekun_status!
       opiekun_hash = {}
       Opiekun.select(:id,:login).each do |c|
-      opiekun_hash[c.id]= c.login
+      opiekun_hash[oc.id] = c.login
       end
-     @@opiekun_status_data[opiekun_hash]
+     return opiekun_hash
 end
 end

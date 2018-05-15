@@ -25,7 +25,8 @@ class KontrahenciController < ApplicationController
   # POST /kontrahenci.json
   def create
     @kontrahenci = Kontrahenci.new(kontrahenci_params)
-
+    @opiekun =  Opiekun.select("id,login")
+    
     respond_to do |format|
       if @kontrahenci.save
         format.html { redirect_to @kontrahenci, notice: 'Kontrahenci was successfully created.' }
@@ -60,6 +61,7 @@ class KontrahenciController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

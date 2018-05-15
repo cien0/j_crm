@@ -37,7 +37,7 @@
 
 <p>
   <strong>Id opiekun:</strong>
-  <%= @kontrahenci.opiekun_id %>
+  <%= Opiekun.find_by(id: @kontrahenci.opiekun_id ).login %>
 </p>
 
 <%= link_to 'Edit', edit_kontrahenci_path(@kontrahenci) %> |

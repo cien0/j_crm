@@ -26,18 +26,23 @@
         </div>
         <div class="row">
             <div class="col-md-10">
-                <div>
+                <div class="container">
                     <%# Czy użytkownik jest zalogowany %>
                     <% if user_signed_in? %>
                     <%# czy uzytkownikiem jest administrator %>
-                    <% if @currentUser  = 1 %>
+                    <% if current_user.id  == 1 %>
                     <%= link_to('Edycja użytkowników', opiekun_index_path,  class: "btn btn-link") %>
                     <%= link_to('Import kontrahentów', load_kontrahenci_upload_path,  class: "btn btn-link") %>
-                    
                     <%# czy uzytkownikiem jest kierownik %>
-                    <% elsif @currentUser  = 2 %>
-                    <%#jezeli inny uzytkownik  %>
+                    <% elsif current_user.id  == 2 %>
+                    <%= link_to('Edycja Kontrahentów', kontrahenci_index_path,  class: "btn btn-link") %>
+                    <%= link_to('Odmowa', odmowa_index_path,  class: "btn btn-link") %>
+                    <%# jezeli inny uzytkownik  %>
                     <% else %>
+                    <%= link_to('Edycja Kontrahentów', kontrahenci_index_path,  class: "btn btn-link") %>
+                    <%= link_to('Odmowa', odmowa_index_path,  class: "btn btn-link") %>
+                    
+                    
                     <% end %>
                     <% end %>
             </div>

@@ -69,6 +69,6 @@ class OdmowaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def odmowa_params
-      params.require(:odmowa).permit(:Id_Kont_klient, :Odmowa, :Data)
+      params.require(:odmowa).permit(:kont_klient_id, :odmowa, :data)
     end
 end

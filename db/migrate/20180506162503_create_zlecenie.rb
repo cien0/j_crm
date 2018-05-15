@@ -3,7 +3,7 @@ class CreateZlecenie < ActiveRecord::Migration
     create_table :zlecenie do |t|
       t.integer :kierownik_id
       t.integer :opiekun_id
-      t.date :datata_utworzenia
+      t.date :data_utworzenia
       t.date :data_zlecenia
       t.integer :typ
       t.string :opis

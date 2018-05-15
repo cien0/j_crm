@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Kontrahenci</h1>
+<h1>Lista kontrahentów</h1>
 </br>
 <div class="digg_pagination">
 <%= will_paginate @kontrahenci %>
@@ -26,7 +26,7 @@
         <td><%= Opiekun.find_by(id: kontrahenci.opiekun_id ).login %></td>
         <td><%= link_to 'Show', kontrahenci %></td>
         <td><%= link_to 'Edit', edit_kontrahenci_path(kontrahenci) %></td>
-        <td><%= link_to 'Destroy', kontrahenci, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', kontrahenci, method: :delete, data: { confirm: 'Czy jesteś pewny??' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,7 +34,7 @@
 
 <br>
 
-<%= link_to 'New Kontrahenci', new_kontrahenci_path %>
+<%= link_to 'Nowu kontrahent', new_kontrahenci_path %>
 </br>
 </br>
 <div class="digg_pagination">

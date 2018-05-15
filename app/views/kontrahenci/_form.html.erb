@@ -1,7 +1,7 @@
 <%= form_for(@kontrahenci) do |f| %>
   <% if @kontrahenci.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@kontrahenci.errors.count, "error") %> prohibited this kontrahenci from being saved:</h2>
+      <h2><%= pluralize(@kontrahenci.errors.count, "błędów") uniemożliiwia zapisanie tego kontrahenta: %> </h2>
 
       <ul>
       <% @kontrahenci.errors.full_messages.each do |message| %>

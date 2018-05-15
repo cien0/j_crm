@@ -1,19 +1,26 @@
 class ZlecenieController < ApplicationController
   before_action :set_zlecenie, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /zlecenie
   # GET /zlecenie.json
   def index
-    @zlecenie = Zlecenie.all
+    logger.debug "contr index"
+   @zlecenie =  Zlecenie.all.paginate(:page => params[:page])
   end
 
   # GET /zlecenie/1
   # GET /zlecenie/1.json
   def show
   end
-
+  
+  def lista
+    logger.debug "kontroler zlecenia"
+    @zlecenie =  Zlecenie.all.paginate(:page => params[:page])
+  end
+  
   # GET /zlecenie/new
   def new
+     logger.debug "kontr new"
     @zlecenie = Zlecenie.new
   end
 
@@ -24,6 +31,7 @@ class ZlecenieController < ApplicationController
   # POST /zlecenie
   # POST /zlecenie.json
   def create
+    logger.debug "contr create"
     @zlecenie = Zlecenie.new(zlecenie_params)
 
     respond_to do |format|
@@ -64,11 +72,14 @@ class ZlecenieController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_zlecenie
+      logger.debug "contr set_zlecenia" 
       @zlecenie = Zlecenie.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def zlecenie_params
-      params.require(:zlecenie).permit(:Id_Kierownik, :Id_Opiekun, :Data_utworzenia, :Data_zlecenia, :Typ, :Opis, :Status, :Raport, :Info)
+      logger.debug "cont zlec param"
+       params.require(:zlecenie).permit(:kierownik_id, :opiekun_id, :datata_utworzenia, :data_zlecenia, :opis, :status, :raport, :info)
     end
+   
 end

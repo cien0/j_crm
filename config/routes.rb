@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'load_kontrahenci/upload'
   post 'load_kontrahenci/upload'
   get 'load_kontrahenci/create'
-  
+   get 'zlecenie/lista'
   resources :kontrahenci
   resources :adres_kontr
   resources :status

@@ -1,3 +1,4 @@
+<% logger.debug "_lista.html" %>
 <%= form_for(@zlecenie) do |f| %>
   <% if @zlecenie.errors.any? %>
     <div id="error_explanation">
@@ -20,8 +21,8 @@
     <%= f.number_field :opiekun_id %>
   </div>
   <div class="field">
-    <%= f.label :datata_utworzenia %><br>
-    <%= f.date_select :datata_utworzenia %>
+    <%= f.label :data_utworzenia %><br>
+    <%= f.date_select :data_utworzenia %>
   </div>
   <div class="field">
     <%= f.label :data_zlecenia %><br>

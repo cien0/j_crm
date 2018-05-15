@@ -1,7 +1,18 @@
-<h1>J CRM</h1>
-<% if user_signed_in? %>
-<h2>WoW</h2>
+<div  class="container">
+<% if user_signed_in? %> 
+<% if current_user.id  != 1 and current_user.id  != 2 %>
+<% logger.debug "index.html" %>
+<% render kontrahenci_index_path %>
 <% else %>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="col-md-12 text-center">
+<h2>J CRM</h2>
+</div>
+<% end %> 
+<% else %>
+<div class="col-md-12 text-center">
+<h2>Witaj w aplikacji J CRM</h2>
+<%= link_to 'Login', new_user_session_path, class: "btn btn-primary", role: "button" %> 
+</div>
 <% end %>
+</div>
 

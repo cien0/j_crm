@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Id system:</strong>
   <%= @kontrahenci.system_id %>
@@ -37,7 +35,8 @@
 
 <p>
   <strong>Id opiekun:</strong>
-  <%= Opiekun.find_by(id: @kontrahenci.opiekun_id ).login %>
+  <%= @kontrahenci.opiekun.login %>
+  <!-- #% Opiekun.find_by(id: @kontrahenci.opiekun_id ).login %-->
 </p>
 
 <%= link_to 'Edit', edit_kontrahenci_path(@kontrahenci) %> |

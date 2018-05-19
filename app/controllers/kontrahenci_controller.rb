@@ -4,7 +4,7 @@ class KontrahenciController < ApplicationController
   # GET /kontrahenci
   # GET /kontrahenci.json
   def index
-    @kontrahenci = Kontrahenci.all.paginate(:page => params[:page])
+  @kontrahenci = Kontrahenci.all.paginate(:page => params[:page])
   end
 
   # GET /kontrahenci/1
@@ -14,7 +14,7 @@ class KontrahenciController < ApplicationController
 
   # GET /kontrahenci/new
   def new
-    @kontrahenci = Kontrahenci.new
+   @kontrahenci = Kontrahenci.new
   end
 
   # GET /kontrahenci/1/edit
@@ -29,7 +29,7 @@ class KontrahenciController < ApplicationController
     
     respond_to do |format|
       if @kontrahenci.save
-        format.html { redirect_to @kontrahenci, notice: 'Kontrahenci was successfully created.' }
+        format.html { redirect_to @kontrahenci, notice: 'Kontrahenci został stworzony.' }
         format.json { render :show, status: :created, location: @kontrahenci }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class KontrahenciController < ApplicationController
   def update
     respond_to do |format|
       if @kontrahenci.update(kontrahenci_params)
-        format.html { redirect_to @kontrahenci, notice: 'Kontrahenci was successfully updated.' }
+        format.html { redirect_to @kontrahenci, notice: 'Kontrahenci został zaktualizowany.' }
         format.json { render :show, status: :ok, location: @kontrahenci }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class KontrahenciController < ApplicationController
   def destroy
     @kontrahenci.destroy
     respond_to do |format|
-      format.html { redirect_to kontrahenci_index_url, notice: 'Kontrahenci was successfully destroyed.' }
+      format.html { redirect_to kontrahenci_index_url, notice: 'Kontrahenci został usunięty.' }
       format.json { head :no_content }
     end
   end
@@ -66,7 +66,8 @@ class KontrahenciController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_kontrahenci
-      @kontrahenci = Kontrahenci.find(params[:id])
+      #@kontrahenci = Kontrahenci.find(params[:id])
+      @kontrahenci = Kontrahenci.joins(:opiekun).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

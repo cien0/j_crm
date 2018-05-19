@@ -1,5 +1,5 @@
 class Kontrahenci < ActiveRecord::Base
-    has_one :opiekun
+belongs_to :opiekun
 
 def opiekun_status!
       opiekun_hash = {}

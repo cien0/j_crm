@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507063605) do
+ActiveRecord::Schema.define(version: 20180528124328) do
 
   create_table "adres_kontr", force: :cascade do |t|
     t.integer  "kontrahenci_id"
-    t.integer  "typ"
+    t.integer  "typ_adresu"
     t.string   "kraj"
     t.string   "kod_pocztowy"
     t.string   "miasto"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180507063605) do
 
   create_table "adres_osoba", force: :cascade do |t|
     t.integer  "osoba_kont_id"
-    t.integer  "typ"
+    t.integer  "typ_adresu"
     t.string   "kraj"
     t.string   "kod_pocztowy"
     t.string   "miasto"
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(version: 20180507063605) do
     t.text     "opis"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "cel_kontaktu", force: :cascade do |t|
+    t.string   "cel"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "dost_marketingowe", force: :cascade do |t|
@@ -78,8 +84,8 @@ ActiveRecord::Schema.define(version: 20180507063605) do
   create_table "kont_klient", force: :cascade do |t|
     t.integer  "kontrahenci_id"
     t.date     "data"
-    t.integer  "typ"
-    t.integer  "cel"
+    t.integer  "typ_spotkania"
+    t.integer  "cel_kontaktu"
     t.text     "raport"
     t.text     "inf_dodat"
     t.datetime "created_at",     null: false
@@ -102,7 +108,7 @@ ActiveRecord::Schema.define(version: 20180507063605) do
   create_table "numer_osoba", force: :cascade do |t|
     t.integer  "osoba_kont_id"
     t.string   "kontakt"
-    t.integer  "typ"
+    t.integer  "typ_kontaktu"
     t.text     "opis"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -119,10 +125,16 @@ ActiveRecord::Schema.define(version: 20180507063605) do
 
   create_table "odmowa", force: :cascade do |t|
     t.integer  "kont_klient_id"
-    t.integer  "odmowa"
+    t.integer  "odmowa_typ"
     t.date     "data"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "odmowa_typ", force: :cascade do |t|
+    t.string   "typ"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "opiekun", force: :cascade do |t|
@@ -150,6 +162,36 @@ ActiveRecord::Schema.define(version: 20180507063605) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "status_text", force: :cascade do |t|
+    t.string   "status_text"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "status_zlecenia", force: :cascade do |t|
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "typ_adresu", force: :cascade do |t|
+    t.string   "typ"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "typ_kontraktu", force: :cascade do |t|
+    t.string   "typ"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "typ_spotkania", force: :cascade do |t|
+    t.string   "typ"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user", force: :cascade do |t|
     t.string   "username",               default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -171,15 +213,15 @@ ActiveRecord::Schema.define(version: 20180507063605) do
   create_table "zlecenie", force: :cascade do |t|
     t.integer  "kierownik_id"
     t.integer  "opiekun_id"
-    t.date     "datata_utworzenia"
+    t.date     "data_utworzenia"
     t.date     "data_zlecenia"
-    t.integer  "typ"
+    t.integer  "typ_spotkania"
     t.string   "opis"
-    t.integer  "status"
+    t.integer  "status_zlecenia"
     t.text     "raport"
     t.text     "info"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

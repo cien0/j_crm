@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Odmowa</h1>
+<h1>Lista odmów</h1>
 
 <table>
   <thead>
@@ -16,11 +14,11 @@
     <% @odmowa.each do |odmowa| %>
       <tr>
         <td><%= odmowa.kont_klient_id %></td>
-        <td><%= odmowa.odmowa %></td>
+        <td><%= odmowa.odmowa_typ %></td>
         <td><%= odmowa.data %></td>
         <td><%= link_to 'Show', odmowa %></td>
         <td><%= link_to 'Edit', edit_odmowa_path(odmowa) %></td>
-        <td><%= link_to 'Destroy', odmowa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', odmowa, method: :delete, data: { confirm: 'Czy aby na pewno?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -2,7 +2,7 @@ class CreateAdresKontr < ActiveRecord::Migration
   def change
     create_table :adres_kontr do |t|
       t.integer :kontrahenci_id
-      t.integer :typ
+      t.integer :typ_adresu
       t.string :kraj
       t.string :kod_pocztowy
       t.string :miasto

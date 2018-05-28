@@ -1,13 +1,7 @@
 <%= form_for(@odmowa) do |f| %>
   <% if @odmowa.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@odmowa.errors.count, "error") %> prohibited this odmowa from being saved:</h2>
-
-      <ul>
-      <% @odmowa.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <h2><%= pluralize(@odmowa.errors.count, "błędów") %>  uniemożliwia zapisanie tego kontrahenta:</h2>
     </div>
   <% end %>
 
@@ -15,10 +9,12 @@
     <%= f.label :kont_klient_id %><br>
     <%= f.number_field :kont_klient_id %>
   </div>
+  
   <div class="field">
-    <%= f.label :odmowa %><br>
-    <%= f.number_field :odmowa %>
+    <%= f.label :odmowa_typ %><br>
+    <%= f.select :odmowa_typ, options_from_collection_for_select( OdmowaTyp.all, 'id', 'typ', @odmowa.odmowa_typ.to_i), :prompt => "" %>
   </div>
+  
   <div class="field">
     <%= f.label :data %><br>
     <%= f.date_select :data %>

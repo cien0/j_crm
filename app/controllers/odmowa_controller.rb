@@ -4,7 +4,7 @@ class OdmowaController < ApplicationController
   # GET /odmowa
   # GET /odmowa.json
   def index
-    @odmowa = Odmowa.all
+    @odmowa = Odmowa.all.paginate(:page => params[:page])
   end
 
   # GET /odmowa/1
@@ -25,7 +25,7 @@ class OdmowaController < ApplicationController
   # POST /odmowa.json
   def create
     @odmowa = Odmowa.new(odmowa_params)
-
+    @odmowa_typ =  OdmowaTyp.select("id,typ")
     respond_to do |format|
       if @odmowa.save
         format.html { redirect_to @odmowa, notice: 'Odmowa was successfully created.' }
@@ -61,14 +61,25 @@ class OdmowaController < ApplicationController
     end
   end
 
+def authenticate_admin!
+    # check if current user is admin
+    if current_user.id != 1 then
+    #logger.debug {user_signed_in?}
+      # if current_user is not admin redirect to some route
+      redirect_to '/'
+    end
+    # if current_user is admin he will proceed to edit action
+end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_odmowa
       @odmowa = Odmowa.find(params[:id])
+      #@odmowa = Odmowa.joins(:odmowa_typ).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def odmowa_params
-      params.require(:odmowa).permit(:kont_klient_id, :odmowa, :data)
+      params.require(:odmowa).permit(:kont_klient_id, :odmowa_typ, :data)
     end
 end

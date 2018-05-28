@@ -3,7 +3,7 @@ class CreateNumerOsoba < ActiveRecord::Migration
     create_table :numer_osoba do |t|
       t.integer :osoba_kont_id
       t.string :kontakt
-      t.integer :typ
+      t.integer :typ_kontaktu
       t.text :opis
 
       t.timestamps null: false

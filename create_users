@@ -5,6 +5,42 @@ INSERT INTO user (username,encrypted_password,created_at,updated_at) VALUES ('m0
 INSERT INTO user (username,encrypted_password,created_at,updated_at) VALUES ('m003','$2a$10$FB.CRk1MvbvepDeKHYnaMuRlhkDxKMR3muQDT357dSKxNTeYKWDgO','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
 INSERT INTO user (username,encrypted_password,created_at,updated_at) VALUES ('m004','$2a$10$FB.CRk1MvbvepDeKHYnaMuRlhkDxKMR3muQDT357dSKxNTeYKWDgO','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
 INSERT INTO user (username,encrypted_password,created_at,updated_at) VALUES ('m005','$2a$10$FB.CRk1MvbvepDeKHYnaMuRlhkDxKMR3muQDT357dSKxNTeYKWDgO','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO opiekun (id,imie,nazwisko,login,aktywny,created_at,updated_at) VALUES (1,'Franciszek','Dudek','m001',1,'2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO opiekun (id,imie,nazwisko,login,aktywny,created_at,updated_at) VALUES (2,'Aleksandra','Nowakowska','m002',1,'2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO opiekun (id,imie,nazwisko,login,aktywny,created_at,updated_at) VALUES (3,'Miłosz','Muszyński','m003',1,'2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO opiekun (id,imie,nazwisko,login,aktywny,created_at,updated_at) VALUES (4,'Mateusz','Jasiński','m004',1,'2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO opiekun (id,imie,nazwisko,login,aktywny,created_at,updated_at) VALUES (5,'Julia','Nawrocka','m005',1,'2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+
+
+INSERT INTO typ_adresu (id,typ,encrypted_password,created_at,updated_at) VALUES (1, 'korespondncyjny','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_adresu (id,typ,encrypted_password,created_at,updated_at) VALUES (2, 'dostawy','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_adresu (id,typ,encrypted_password,created_at,updated_at) VALUES (3, 'inny','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO status_text (id,status_text,created_at,updated_at) VALUES (0, 'nowy','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO status_text (id,status_text,created_at,updated_at) VALUES (1, 'pozyskany','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO status_text (id,status_text,created_at,updated_at) VALUES (2, 'aktywny','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO status_text (id,status_text,created_at,updated_at) VALUES (3, 'zagrożony','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO status_text (id,status_text,created_at,updated_at) VALUES (4, 'stracony','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO status_text (id,status_text,created_at,updated_at) VALUES (5, 'do odzyskania','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO status_text (id,status_text,created_at,updated_at) VALUES (10, 'nieaktywny','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_kontaktu (id,typ,created_at,updated_at) VALUES (1, 'numer telefonu','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_kontaktu (id,typ,created_at,updated_at) VALUES (2, 'numer faksu','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_kontaktu (id,typ,created_at,updated_at) VALUES (3, 'numer inny','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_kontaktu (id,typ,created_at,updated_at) VALUES (4, 'adres email','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_kontaktu (id,typ,created_at,updated_at) VALUES (5, 'strona WWW','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_spotkania (id,typ,created_at,updated_at) VALUES (1, 'kontakt telefoniczny','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_spotkania (id,typ,created_at,updated_at) VALUES (2, 'kontakt mailowy','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_spotkania (id,typ,created_at,updated_at) VALUES (3, 'kontakt osobisty','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_spotkania (id,typ,created_at,updated_at) VALUES (4, 'przekazanie materiałów marketingo-wych','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO cel_kontaktu (id,cel,created_at,updated_at) VALUES (1, 'zgłoszenie reklamacyjne','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO cel_kontaktu (id,cel,created_at,updated_at) VALUES (2, 'nawiązanie kontaktu handlowego','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO cel_kontaktu (id,cel,created_at,updated_at) VALUES (3, 'zamówienie','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO cel_kontaktu (id,cel,created_at,updated_at) VALUES (4, 'oferta','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO cel_kontaktu (id,cel,created_at,updated_at) VALUES (5, 'dostarczenie materiału markentigowego','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO cel_kontaktu (id,cel,created_at,updated_at) VALUES (10, 'inne','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO odmowa_typ (id,typ,created_at,updated_at) VALUES (1, 'telefoniczna','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO odmowa_typ (id,typ,created_at,updated_at) VALUES (2, 'mailowa','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO odmowa_typ (id,typ,created_at,updated_at) VALUES (3, 'wysyłka pocztowa','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+.exit
 
 rails console
 u = User.find_by_id(1)
@@ -25,3 +61,4 @@ u.save
 u = User.find_by_id(6)
 u.password = "12345678"
 u.save
+

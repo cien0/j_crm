@@ -5,9 +5,9 @@ class CreateZlecenie < ActiveRecord::Migration
       t.integer :opiekun_id
       t.date :data_utworzenia
       t.date :data_zlecenia
-      t.integer :typ
+      t.integer :typ_spotkania
       t.string :opis
-      t.integer :status
+      t.integer :status_zlecenia
       t.text :raport
       t.text :info
 

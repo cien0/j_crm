@@ -36,11 +36,11 @@
                     <%# czy uzytkownikiem jest kierownik %>
                     <% elsif current_user.id  == 2 %>
                     <%= link_to('Edycja Kontrahentów', kontrahenci_index_path,  class: "btn btn-link") %>
-                    <%= link_to('Odmowa', odmowa_index_path,  class: "btn btn-link") %>
+                    <%= link_to('Odmowa', odmowa_mark_index_path,  class: "btn btn-link") %>
                     <%# jezeli inny uzytkownik  %>
                     <% else %>
                     <%= link_to('Edycja Kontrahentów', kontrahenci_index_path,  class: "btn btn-link") %>
-                    <%= link_to('Odmowa', odmowa_index_path,  class: "btn btn-link") %>
+                    <%= link_to('Odmowa', odmowa_mark_index_path,  class: "btn btn-link") %>
                     
                     
                     <% end %>

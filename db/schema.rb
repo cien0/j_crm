@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528124328) do
+ActiveRecord::Schema.define(version: 20180530060111) do
 
   create_table "adres_kontr", force: :cascade do |t|
     t.integer  "kontrahenci_id"
-    t.integer  "typ_adresu"
+    t.integer  "typ_adresu_id"
     t.string   "kraj"
     t.string   "kod_pocztowy"
     t.string   "miasto"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180528124328) do
 
   create_table "adres_osoba", force: :cascade do |t|
     t.integer  "osoba_kont_id"
-    t.integer  "typ_adresu"
+    t.integer  "typ_adresu_id"
     t.string   "kraj"
     t.string   "kod_pocztowy"
     t.string   "miasto"
@@ -84,12 +84,12 @@ ActiveRecord::Schema.define(version: 20180528124328) do
   create_table "kont_klient", force: :cascade do |t|
     t.integer  "kontrahenci_id"
     t.date     "data"
-    t.integer  "typ_spotkania"
-    t.integer  "cel_kontaktu"
+    t.integer  "typ_spotkania_id"
+    t.integer  "cel_kontaktu_id"
     t.text     "raport"
     t.text     "inf_dodat"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "kontrahenci", force: :cascade do |t|
@@ -108,10 +108,10 @@ ActiveRecord::Schema.define(version: 20180528124328) do
   create_table "numer_osoba", force: :cascade do |t|
     t.integer  "osoba_kont_id"
     t.string   "kontakt"
-    t.integer  "typ_kontaktu"
+    t.integer  "typ_kontaktu_id"
     t.text     "opis"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "obroty", force: :cascade do |t|
@@ -123,9 +123,9 @@ ActiveRecord::Schema.define(version: 20180528124328) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "odmowa", force: :cascade do |t|
+  create_table "odmowa_mark", force: :cascade do |t|
     t.integer  "kont_klient_id"
-    t.integer  "odmowa_typ"
+    t.integer  "odmowa_typ_id"
     t.date     "data"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -157,7 +157,7 @@ ActiveRecord::Schema.define(version: 20180528124328) do
 
   create_table "status", force: :cascade do |t|
     t.integer  "kontrahenci_id"
-    t.integer  "status"
+    t.integer  "status_text_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -215,13 +215,13 @@ ActiveRecord::Schema.define(version: 20180528124328) do
     t.integer  "opiekun_id"
     t.date     "data_utworzenia"
     t.date     "data_zlecenia"
-    t.integer  "typ_spotkania"
+    t.integer  "typ_spotkania_id"
     t.string   "opis"
-    t.integer  "status_zlecenia"
+    t.integer  "status_zlecenia_id"
     t.text     "raport"
     t.text     "info"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
 end

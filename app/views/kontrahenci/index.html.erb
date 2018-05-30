@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Lista kontrahentów</h1>
 </br>
 <div class="digg_pagination">
 <%= will_paginate @kontrahenci %>
 </div>
 </br>
-<table class="table-bordered table-striped table-hover">
-  <thead>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
     <tr>
       <th>Id</th>
       <th>Nazwa</th>
@@ -24,9 +22,9 @@
         <td><%= kontrahenci.nazwa %></td>
         <td><%= kontrahenci.nip %></td>
         <td><%= Opiekun.find_by(id: kontrahenci.opiekun_id ).login %></td>
-        <td><%= link_to 'Show', kontrahenci %></td>
-        <td><%= link_to 'Edit', edit_kontrahenci_path(kontrahenci) %></td>
-        <td><%= link_to 'Destroy', kontrahenci, method: :delete, data: { confirm: 'Czy jesteś pewny??' } %></td>
+        <td><%= link_to 'Pokaż', kontrahenci,  class: "btn btn-link"%></td>
+        <td><%= link_to 'Edytuj', edit_kontrahenci_path(kontrahenci),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Kasuj', kontrahenci, method: :delete,  class: "btn btn-link",  data: { confirm: 'Czy jesteś pewny??'} %></td>
       </tr>
     <% end %>
   </tbody>

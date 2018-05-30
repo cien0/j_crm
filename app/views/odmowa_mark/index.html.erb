@@ -1,0 +1,38 @@
+<h1>Lista odmów marketingowych</h1>
+
+<div class="digg_pagination">
+<%= will_paginate @odmowa_mark %>
+</div>
+
+
+<table class="table-bordered table-striped table-hover align-middle">
+  <thead>
+    <tr>
+      <th>Kont klient</th>
+      <th>Odmowa typ</th>
+      <th>Data</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @odmowa_mark.each do |odmowa_mark| %>
+      <tr>
+        <td><%= odmowa_mark.kont_klient_id %></td>
+        <td><%= odmowa_mark.odmowa_typ.typ %></td>
+        <td><%= odmowa_mark.data %></td>
+        <td><%= link_to 'Pokaż', odmowa_mark,  class: "btn btn-link"  %></td>
+        <td><%= link_to 'Edytuj', edit_odmowa_mark_path(odmowa_mark),  class: "btn btn-link"  %></td>
+        <td><%= link_to 'Kasuj', odmowa_mark, method: :delete,  class: "btn btn-link" , data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Odmowa mark', new_odmowa_mark_path %>
+
+<div class="digg_pagination">
+<%= will_paginate @odmowa_mark %>
+</div>

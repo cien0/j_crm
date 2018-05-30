@@ -1,0 +1,29 @@
+<%= form_for(@odmowa_mark) do |f| %>
+  <% if @odmowa_mark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@odmowa_mark.errors.count, "error") %> prohibited this odmowa_mark from being saved:</h2>
+
+      <ul>
+      <% @odmowa_mark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :kont_klient_id %><br>
+    <%= f.number_field :kont_klient_id %>
+  </div>
+  <div class="field">
+    <%= f.label :odmowa_typ_id %><br>
+    <%= f.select :odmowa_typ_id, options_from_collection_for_select( OdmowaTyp.all, 'id', 'typ', @odmowa_mark.odmowa_typ_id), :prompt => "" %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.date_select :data %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

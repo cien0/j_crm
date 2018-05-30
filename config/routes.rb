@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :odmowa_mark
   devise_for :user,  :path_prefix =>'auth'
   root 'home#index'
   get '/user/sign_out', to: 'devise/sessions#destroy'

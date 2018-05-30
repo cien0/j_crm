@@ -2,7 +2,7 @@ class CreateAdresOsoba < ActiveRecord::Migration
   def change
     create_table :adres_osoba do |t|
       t.integer :osoba_kont_id
-      t.integer :typ_adresu
+      t.integer :typ_adresu_id
       t.string :kraj
       t.string :kod_pocztowy
       t.string :miasto

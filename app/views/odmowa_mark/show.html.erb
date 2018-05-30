@@ -1,0 +1,17 @@
+<p>
+  <strong>Kont klient:</strong>
+  <%= @odmowa_mark.kont_klient_id %>
+</p>
+
+<p>
+  <strong>Odmowa typ:</strong>
+  <%= @odmowa_mark.odmowa_typ.typ %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @odmowa_mark.data %>
+</p>
+
+<%= link_to 'Edit', edit_odmowa_mark_path(@odmowa_mark) %> |
+<%= link_to 'Back', odmowa_mark_index_path %>

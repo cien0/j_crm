@@ -30,6 +30,7 @@ gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'rails-i18n', '~> 4.0'
 gem 'pry-byebug', '~> 3.6'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'chosen-rails', '~> 1.8', '>= 1.8.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

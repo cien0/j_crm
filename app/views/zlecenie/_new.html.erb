@@ -11,17 +11,16 @@
     </div>
   <% end %>
 
-
   <div class="field">
-    <%= f.label :kontrahenci_id %><br>
-    <%= f.select :kontrahenci_id, options_from_collection_for_select( Kontrahenci.all, 'id', 'nazwa', @zlecenie.kontrahenci_id.to_s), :prompt => "" %>
+  <%= f.label :kontrahenci_id %><br>
+  <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => ""}, { :class => "chosen-select" } %>
   </div>
+  
   <div class="field">
     <%= f.label :opiekun_id %><br>
     <%= f.select :opiekun_id, options_from_collection_for_select( Opiekun.all, 'id', 'login', @zlecenie.opiekun_id.to_s), :prompt => "" %>
   </div>
-  
-  <div class="field">
+    <div class="field">
     <%= f.label :data_zlecenia %><br>
     <%= f.date_select :data_zlecenia %>
   </div>

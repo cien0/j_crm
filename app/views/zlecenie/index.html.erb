@@ -25,9 +25,9 @@
   <tbody>
     <% @zlecenie.each do |zlecenie| %>
       <tr>
-        <td><%= zlecenie.kontrahenci_id %></td>
-        <td><%= zlecenie.kierownik_id %></td>
-        <td><%= zlecenie.opiekun_id %></td>
+        <td><%= zlecenie.kontrahenci.nazwa %></td>
+        <td><%= zlecenie.opiekun.login %></td>
+        <td><%= zlecenie.opiekun.login %></td>
         <td><%= zlecenie.data_utworzenia %></td>
         <td><%= zlecenie.data_zlecenia %></td>
         <td><%= zlecenie.typ_spotkania_id %></td>

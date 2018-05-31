@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Lista zleceń</h1>
 
 </br>
@@ -10,8 +8,9 @@
 <table class="table-bordered table-striped table-hover">
   <thead>
     <tr>
-      <th>Id kierownik</th>
-      <th>Id opiekun</th>
+      <th>Kontrahent</th>
+      <th>Kierownik zlecający</th>
+      <th>Zlecony opiekunowi</th>
       <th>Data utworzenia</th>
       <th>Data zlecenia</th>
       <th>Typ</th>
@@ -26,18 +25,19 @@
   <tbody>
     <% @zlecenie.each do |zlecenie| %>
       <tr>
+        <td><%= zlecenie.kontrahenci_id %></td>
         <td><%= zlecenie.kierownik_id %></td>
         <td><%= zlecenie.opiekun_id %></td>
-        <td><%= zlecenie.datata_utworzenia %></td>
+        <td><%= zlecenie.data_utworzenia %></td>
         <td><%= zlecenie.data_zlecenia %></td>
-        <td><%= zlecenie.typ %></td>
+        <td><%= zlecenie.typ_spotkania_id %></td>
         <td><%= zlecenie.opis %></td>
-        <td><%= zlecenie.status %></td>
+        <td><%= zlecenie.status_zlecenia_id %></td>
         <td><%= zlecenie.raport %></td>
         <td><%= zlecenie.info %></td>
         <td><%= link_to 'Show', zlecenie %></td>
         <td><%= link_to 'Edit', edit_zlecenie_path(zlecenie) %></td>
-        <td><%= link_to 'Destroy', zlecenie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', zlecenie, method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>

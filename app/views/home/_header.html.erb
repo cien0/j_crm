@@ -1,22 +1,22 @@
 
 <div class="row">
     <div class="col-md-2">
-        <div>
+        <div class="navbar-brand>
             <%= link_to image_tag('logo.png', width: '100', height: '75', alt: 'Logo'), '/', title: 'Logo', relative: true, class: "btn btn-link " %>
-        </div>
+  </div>
     </div>
     <div class="col-md-10">
         <div class="row">
-            <div class="col-md-10 float-right">
-                <div class="float-right">
+            <div class="col-md-10 pull-right">
+                <div class="pull-right">
                 <% if user_signed_in? %>
                 <%# logowanie i wylogowywanie %>
-                <p class="btn btn-link float-right">
+                <p class="btn pull-righ">
                 <span class="glyphicon glyphicon-log-in"></span>
                 <%= link_to('Logout', destroy_user_session_path, method: :delete,  class: "btn btn-link") %> 
                 </p>
                 <% else %>
-                <div class="btn btn-link float-right">
+                <div class="btn pull-righ">
                 <span class="glyphicon glyphicon-user"></span> 
                 <%= link_to 'Login', new_user_session_path, class: "btn btn-link"  %>  
                 </div>
@@ -36,6 +36,7 @@
                     <%# czy uzytkownikiem jest kierownik %>
                     <% elsif current_user.id  == 2 %>
                     <%= link_to('Edycja Kontrahentów', kontrahenci_index_path,  class: "btn btn-link") %>
+                    <%= link_to('Dodanie zlecenia', zlecenie_index_path,  class: "btn btn-link") %>
                     <%= link_to('Odmowa', odmowa_mark_index_path,  class: "btn btn-link") %>
                     <%# jezeli inny uzytkownik  %>
                     <% else %>

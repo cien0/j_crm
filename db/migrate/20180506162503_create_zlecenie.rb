@@ -1,6 +1,7 @@
 class CreateZlecenie < ActiveRecord::Migration
   def change
     create_table :zlecenie do |t|
+      t.integer :kontrahenci_id
       t.integer :kierownik_id
       t.integer :opiekun_id
       t.date :data_utworzenia

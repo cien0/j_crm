@@ -40,6 +40,12 @@ INSERT INTO cel_kontaktu (id,cel,created_at,updated_at) VALUES (10, 'inne','2018
 INSERT INTO odmowa_typ (id,typ,created_at,updated_at) VALUES (1, 'telefoniczna','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
 INSERT INTO odmowa_typ (id,typ,created_at,updated_at) VALUES (2, 'mailowa','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
 INSERT INTO odmowa_typ (id,typ,created_at,updated_at) VALUES (3, 'wysyłka pocztowa','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+
+INSERT INTO status_zlecenia (id,status,created_at,updated_at) VALUES (1, 'oczekujący','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO status_zlecenia (id,status,created_at,updated_at) VALUES (2, 'wykonane','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO status_zlecenia (id,status,created_at,updated_at) VALUES (3, 'niezrealizowane','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+
+
 .exit
 
 rails console

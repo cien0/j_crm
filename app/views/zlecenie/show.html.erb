@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kontrahent:</strong>
+  <%= @zlecenie.kontrahenci_id %>
+</p>
 
 <p>
   <strong>Id kierownik:</strong>
@@ -7,12 +11,12 @@
 
 <p>
   <strong>Id opiekun:</strong>
-  <%= @zlecenie.opiekun_id %>
+  <%= @zlecenie.opiekun.login %>
 </p>
 
 <p>
   <strong>Data utworzenia:</strong>
-  <%= @zlecenie.datata_utworzenia %>
+  <%= @zlecenie.data_utworzenia %>
 </p>
 
 <p>
@@ -22,7 +26,7 @@
 
 <p>
   <strong>Typ:</strong>
-  <%= @zlecenie.typ %>
+  <%= @zlecenie.typ_spotkania.typ %>
 </p>
 
 <p>
@@ -32,7 +36,7 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @zlecenie.status %>
+  <%= @zlecenie.status_zlecenia.status %>
 </p>
 
 <p>

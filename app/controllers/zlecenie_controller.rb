@@ -79,7 +79,7 @@ class ZlecenieController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def zlecenie_params
       logger.debug "cont zlec param"
-       params.require(:zlecenie).permit(:kierownik_id, :opiekun_id, :datata_utworzenia, :data_zlecenia, :opis, :status, :raport, :info)
+       params.require(:zlecenie).permit(:kontrahenci_id, :kierownik_id, :opiekun_id, :datata_utworzenia, :data_zlecenia, :opis, :status_zlecenia_id, :typ_spotkania_id, :raport, :info)
     end
    
 end

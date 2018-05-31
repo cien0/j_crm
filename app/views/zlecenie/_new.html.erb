@@ -11,41 +11,36 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :kierownik_id %><br>
-    <%= f.number_field :kierownik_id %>
+    <%= f.label :kontrahenci_id %><br>
+    <%= f.select :kontrahenci_id, options_from_collection_for_select( Kontrahenci.all, 'id', 'nazwa', @zlecenie.kontrahenci_id.to_s), :prompt => "" %>
   </div>
   <div class="field">
     <%= f.label :opiekun_id %><br>
-    <%= f.number_field :opiekun_id %>
+    <%= f.select :opiekun_id, options_from_collection_for_select( Opiekun.all, 'id', 'login', @zlecenie.opiekun_id.to_s), :prompt => "" %>
   </div>
-  <div class="field">
-    <%= f.label :data_utworzenia %><br>
-    <%= f.date_select :data_utworzenia %>
-  </div>
+  
   <div class="field">
     <%= f.label :data_zlecenia %><br>
     <%= f.date_select :data_zlecenia %>
   </div>
   <div class="field">
     <%= f.label :typ_spotkania_id %><br>
-    <%=  f.select :typ_spotkania_id, options_from_collection_for_select( TypSpotkania.all, 'id', 'typ', @zlecenie.typ_spotkania.to_s), :prompt => "" %>
+    <%= f.select :typ_spotkania_id, options_from_collection_for_select( TypSpotkania.all, 'id', 'typ', @zlecenie.typ_spotkania_id.to_s), :prompt => "" %>
   </div>
   <div class="field">
     <%= f.label :opis %><br>
-    <%= f.text_area :opis, :size=>"80", :maxlength=>"254" %>
+    <%= f.text_field :opis, :size=>"80", :maxlength=>"254" %>
   </div>
   <div class="field">
-    <%= f.label :status_zlecenia_id %><br>
-    <%=  f.select :status_zlecenia_id, options_from_collection_for_select( StatusZlecenia.all, 'id', 'status', @zlecenie.status_zlecenia.to_s), :prompt => "" %>
+    <%= f.hidden_field :status_zlecenia_id , :value => 1 %>
+  </div>
+    <div class="field">
+    <%= f.hidden_field :kierownik_id , :value => current_user.id %>
   </div>
   <div class="field">
-    <%= f.label :raport %><br>
-    <%= f.text_area :raport, cols: "80", rows: "6" %>
-  </div>
-  <div class="field">
-    <%= f.label :info %><br>
-    <%= f.text_area :info, cols: "80", rows: "6" %>
+    <%= f.hidden_field :data_utworzenia, :value => Time.now.strftime("%Y-%m-%d") %>
   </div>
   <div class="actions">
     <%= f.submit %>

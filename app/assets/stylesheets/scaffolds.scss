@@ -20,6 +20,7 @@ pre {
 
 a {
   color: #000;
+  background-color: #F5F5F5;
   text-decoration: none;
 
   &:visited {
@@ -28,8 +29,8 @@ a {
   }
 
   &:hover {
-    color: #fff;
-    background-color: #ffffff;
+    color: #000080;
+    background-color: #F5F5F5;
     text-decoration: none;
   }
 }

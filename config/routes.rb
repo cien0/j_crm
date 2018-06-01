@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   
-  
-  get 'load_faktury/load_obroty'
-
   devise_for :user,  :path_prefix =>'auth'
   root 'home#index'
   get '/user/sign_out', to: 'devise/sessions#destroy'
@@ -27,9 +24,8 @@ Rails.application.routes.draw do
   resources :kierownik
   resources :odmowa
   resources :zlecenie
- 
-  resources :faktury
-  resources :obroty
+  resources :load_faktury
+  resources :load_obroty
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

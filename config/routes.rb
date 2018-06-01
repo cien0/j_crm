@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-  resources :odmowa_mark
+  
+  get 'load_faktury/load_obroty'
+
   devise_for :user,  :path_prefix =>'auth'
   root 'home#index'
   get '/user/sign_out', to: 'devise/sessions#destroy'
@@ -9,7 +11,9 @@ Rails.application.routes.draw do
   get 'load_kontrahenci/upload'
   post 'load_kontrahenci/upload'
   get 'load_kontrahenci/create'
-   get 'zlecenie/lista'
+  get 'zlecenie/:id/realizacja', to: 'zlecenie#realizacja', as: 'zlecenie_realizacja'
+  get 'zlecenie/lista', to: 'zlecenie#lista'
+  resources :odmowa_mark
   resources :kontrahenci
   resources :adres_kontr
   resources :status
@@ -23,6 +27,7 @@ Rails.application.routes.draw do
   resources :kierownik
   resources :odmowa
   resources :zlecenie
+ 
   resources :faktury
   resources :obroty
   # The priority is based upon order of creation: first created -> highest priority.

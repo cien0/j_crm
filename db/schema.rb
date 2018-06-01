@@ -222,6 +222,7 @@ ActiveRecord::Schema.define(version: 20180530060111) do
     t.text     "info"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "kontrahenci_id"
   end
 
 end

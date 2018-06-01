@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :kontrahenci_id %><br>
+     <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => ""}, { :class => "chosen-select" } %>
+  </div>
+  <div class="field">
     <%= f.label :kierownik_id %><br>
-    <%= f.number_field :kierownik_id %>
+       <%= f.select :kierownik_id, options_from_collection_for_select( Kierownik.all, 'id', 'login', @zlecenie.kierownik_id.to_s), :prompt => "" %>
   </div>
   <div class="field">
     <%= f.label :opiekun_id %><br>
-    <%= f.number_field :opiekun_id %>
+     <%= f.select :opiekun_id, options_from_collection_for_select( Opiekun.all, 'id', 'login', @zlecenie.opiekun_id.to_s), :prompt => "" %>
   </div>
   <div class="field">
     <%= f.label :data_utworzenia %><br>
@@ -29,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :typ_spotkania_id %><br>
-    <%=  f.select :typ_spotkania_id, options_from_collection_for_select( TypSpotkania.all, 'id', 'typ', @zlecenie.typ_spotkania.to_s), :prompt => "" %>
+    <%=  f.select :typ_spotkania_id, options_from_collection_for_select( TypSpotkania.all, 'id', 'typ', @zlecenie.typ_spotkania_id.to_s), :prompt => "" %>
   </div>
   <div class="field">
     <%= f.label :opis %><br>
@@ -37,7 +41,7 @@
   </div>
   <div class="field">
     <%= f.label :status_zlecenia_id %><br>
-    <%=  f.select :status_zlecenia_id, options_from_collection_for_select( StatusZlecenia.all, 'id', 'status', @zlecenie.status_zlecenia.to_s), :prompt => "" %>
+    <%=  f.select :status_zlecenia_id, options_from_collection_for_select( StatusZlecenia.all, 'id', 'status', @zlecenie.status_zlecenia_id.to_s), :prompt => "" %>
   </div>
   <div class="field">
     <%= f.label :raport %><br>

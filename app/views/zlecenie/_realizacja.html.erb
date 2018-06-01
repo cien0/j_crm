@@ -1,0 +1,31 @@
+<%= form_for(@zlecenie) do |f| %>
+  <% if @zlecenie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@zlecenie.errors.count, "error") %> prohibited this zlecenie from being saved:</h2>
+
+      <ul>
+      <% @zlecenie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :status_zlecenia_id %><br>
+    <%=  f.select :status_zlecenia_id, options_from_collection_for_select( StatusZlecenia.all, 'id', 'status', @zlecenie.status_zlecenia_id.to_s), :prompt => "" %>
+  </div>
+  <div class="field">
+    <%= f.label :raport %><br>
+    <%= f.text_area :raport, cols: "80", rows: "6" %>
+  </div>
+  <div class="field">
+    <%= f.label :info %><br>
+    <%= f.text_area :info, cols: "80", rows: "6" %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :data_utworzenia, :value => Time.now.strftime("%Y-%m-%d") %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

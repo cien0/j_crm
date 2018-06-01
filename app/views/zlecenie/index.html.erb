@@ -5,19 +5,17 @@
 <%= will_paginate @zlecenie %>
 </div>
 
-<table class="table-bordered table-striped table-hover">
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Kontrahent</th>
       <th>Kierownik zlecający</th>
       <th>Zlecony opiekunowi</th>
-      <th>Data utworzenia</th>
       <th>Data zlecenia</th>
       <th>Typ</th>
       <th>Opis</th>
       <th>Status</th>
       <th>Raport</th>
-      <th>Info</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,18 +24,16 @@
     <% @zlecenie.each do |zlecenie| %>
       <tr>
         <td><%= zlecenie.kontrahenci.nazwa %></td>
+        <td><%= zlecenie.kierownik.login %></td>
         <td><%= zlecenie.opiekun.login %></td>
-        <td><%= zlecenie.opiekun.login %></td>
-        <td><%= zlecenie.data_utworzenia %></td>
         <td><%= zlecenie.data_zlecenia %></td>
-        <td><%= zlecenie.typ_spotkania_id %></td>
+        <td><%= zlecenie.typ_spotkania.typ %></td>
         <td><%= zlecenie.opis %></td>
-        <td><%= zlecenie.status_zlecenia_id %></td>
+        <td><%= zlecenie.status_zlecenia.status %></td>
         <td><%= zlecenie.raport %></td>
-        <td><%= zlecenie.info %></td>
-        <td><%= link_to 'Show', zlecenie %></td>
-        <td><%= link_to 'Edit', edit_zlecenie_path(zlecenie) %></td>
-        <td><%= link_to 'Destroy', zlecenie, method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
+        <td><%= link_to 'Show', zlecenie,  class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_zlecenie_path(zlecenie),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', zlecenie,  class: "btn btn-link", method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>

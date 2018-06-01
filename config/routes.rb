@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get 'load_obroty/upload'
   post 'load_obroty/upload'
   get 'load_obroty/create'
+  get 'load_faktury/show'
+  get 'load_faktury/upload'
+  post 'load_faktury/upload'
+  get 'load_faktury/create'
   get 'zlecenie/:id/realizacja', to: 'zlecenie#realizacja', as: 'zlecenie_realizacja'
   get 'zlecenie/lista', to: 'zlecenie#lista'
   resources :odmowa_mark

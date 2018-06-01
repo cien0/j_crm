@@ -3,12 +3,17 @@
 </br>
 </br>
 
-<div>
+<div class="container">
+
+<div class="row">
+<div class="col-sm-8">
 
 <%= form_tag({action: :upload}, multipart: true) do %>
 <%= file_field_tag "csv_file", class: "profile_input" %>
-
+</div>
+<div class="col-sm-4">
 <%= submit_tag 'Wyślij' %>
 <% end %>
-
+</div>
+</div>
 </div>

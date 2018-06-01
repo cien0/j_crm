@@ -5,9 +5,9 @@ class LoadObrotyController < ApplicationController
 def upload
   uploaded_io = params[:csv_file]
 if uploaded_io then
-  File.open(Rails.root.join('public','uploads', 'kontrahenci.csv'), 'wb') do |file|
+  File.open(Rails.root.join('public','uploads', 'obroty.csv'), 'wb') do |file|
     file.write(uploaded_io.read)
-    redirect_to load_kontrahenci_show_path
+    redirect_to load_obroty_show_path
 end
 end
 end

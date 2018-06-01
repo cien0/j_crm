@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get 'load_kontrahenci/upload'
   post 'load_kontrahenci/upload'
   get 'load_kontrahenci/create'
+  get 'load_obroty/show'
+  get 'load_obroty/upload'
+  post 'load_obroty/upload'
+  get 'load_obroty/create'
   get 'zlecenie/:id/realizacja', to: 'zlecenie#realizacja', as: 'zlecenie_realizacja'
   get 'zlecenie/lista', to: 'zlecenie#lista'
   resources :odmowa_mark

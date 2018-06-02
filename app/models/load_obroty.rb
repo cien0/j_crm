@@ -22,8 +22,10 @@ def self.import!
    #import obrotów    
     options = {:encoding => 'windows-1250:utf-8', :skip_blanks => true, :headers => false, :col_sep => ";"}
     CSV.foreach(Rails.root.join('public','uploads', 'obroty.csv'), options ) do |row|
-    puts row[0]
-       Obroty.create!(:kontrahenci_id => row[0], :rok => row[1], :miesiac => row[2], :kwota => row[3])
+   puts row[0]
+   #unless Obroty.exists?(kontrahenci_id: row[0])
+          Obroty.create!(:kontrahenci_id => row[0], :rok => row[1], :miesiac => row[2], :kwota => row[3])
+   #end
    end
 end
 end

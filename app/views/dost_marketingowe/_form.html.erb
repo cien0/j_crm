@@ -12,16 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :Id_Kont_klient %><br>
-    <%= f.number_field :Id_Kont_klient %>
+    <%= f.label :Kontrahent %><br>
+     <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => ""}, { :class => "chosen-select" } %>
   </div>
   <div class="field">
-    <%= f.label :Typ %><br>
-    <%= f.text_field :Typ %>
+    <%= f.label :typ %><br>
+    <%= f.text_field :typ %>
   </div>
   <div class="field">
-    <%= f.label :Ile %><br>
-    <%= f.text_field :Ile %>
+    <%= f.label :ile %><br>
+    <%= f.text_field :ile %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.date_select :data %>
   </div>
   <div class="actions">
     <%= f.submit %>

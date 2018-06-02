@@ -5,6 +5,11 @@ class DostMarketingoweController < ApplicationController
   # GET /dost_marketingowe.json
   def index
     @dost_marketingowe = DostMarketingowe.all
+    respond_to do |format|
+      format.html
+      format.csv { render text: @dost_marketingowe.to_csv }
+      format.txt { render text: @dost_marketingowe.to_txt }
+    end
   end
 
   # GET /dost_marketingowe/1
@@ -69,6 +74,6 @@ class DostMarketingoweController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dost_marketingowe_params
-      params.require(:dost_marketingowe).permit(:Id_Kont_klient, :Typ, :Ile)
+      params.require(:dost_marketingowe).permit(:kontrahenci_id, :typ, :ile, :data)
     end
 end

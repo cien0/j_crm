@@ -1,18 +1,20 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Id kont klient:</strong>
-  <%= @dost_marketingowe.Id_Kont_klient %>
+  <strong>Nazwa klienta:</strong>
+  <%= @dost_marketingowe.kontrahenci.nazwa %>
 </p>
 
 <p>
-  <strong>Typ:</strong>
-  <%= @dost_marketingowe.Typ %>
+  <strong>Typ dostawy marketingowej:</strong>
+  <%= @dost_marketingowe.typ %>
 </p>
 
 <p>
-  <strong>Ile:</strong>
-  <%= @dost_marketingowe.Ile %>
+  <strong>Ilość dostarczonych materiałów:</strong>
+  <%= @dost_marketingowe.ile %>
+</p>
+<p>
+<strong>Data dostawy:</strong>
+  <%= @dost_marketingowe.data %>
 </p>
 
 <%= link_to 'Edit', edit_dost_marketingowe_path(@dost_marketingowe) %> |

@@ -16,10 +16,10 @@
   <tbody>
     <% @faktury.each do |faktury| %>
       <tr>
-        <td><%= faktury.Id_kontrahenci %></td>
-        <td><%= faktury.Nr_faktury %></td>
-        <td><%= faktury.Kwota %></td>
-        <td><%= faktury.VAT %></td>
+        <td><%= faktury.kontrahenci_id %></td>
+        <td><%= faktury.nr_faktury %></td>
+        <td><%= faktury.kwota %></td>
+        <td><%= faktury.vat %></td>
         <td><%= link_to 'Show', faktury %></td>
         <td><%= link_to 'Edit', edit_faktury_path(faktury) %></td>
         <td><%= link_to 'Destroy', faktury, method: :delete, data: { confirm: 'Are you sure?' } %></td>

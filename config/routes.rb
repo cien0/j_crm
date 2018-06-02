@@ -32,8 +32,8 @@ Rails.application.routes.draw do
   resources :kierownik
   resources :odmowa
   resources :zlecenie
-  resources :load_faktury
-  resources :load_obroty
+  resources :faktury
+  resources :obroty
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :kont_klient_id %><br>
-    <%= f.number_field :kont_klient_id %>
+    <%= f.label :kontrahenci_id %><br>
+    <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => ""}, { :class => "chosen-select" } %>
   </div>
   <div class="field">
     <%= f.label :odmowa_typ_id %><br>

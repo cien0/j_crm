@@ -15,9 +15,7 @@ class ZlecenieController < ApplicationController
   
   def lista
     user = current_user.id-1
-    logger.debug user
     @zlecenie =  Zlecenie.all.select { |m| m.opiekun_id == user }
-    logger.debug (@zlecenie)
   end
   
   # GET /zlecenie/new

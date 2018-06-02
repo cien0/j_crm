@@ -1,13 +1,20 @@
-<p id="notice"><%= notice %></p>
+<h1>Lista dostaw marketingowych</h1>
 
-<h1>Listing Dost Marketingowe</h1>
+<p>
+  
+  Download:
+  <%= link_to "CSV", params.merge(:format => :csv), :class => "dost_marketingowe" %> |
+  <%= link_to "TXT", params.merge(:format => :txt), :class => "dost_marketingowe" %>
+    
+</p>
 
-<table>
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Id kont klient</th>
       <th>Typ</th>
       <th>Ile</th>
+      <th>Data</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,12 +22,13 @@
   <tbody>
     <% @dost_marketingowe.each do |dost_marketingowe| %>
       <tr>
-        <td><%= dost_marketingowe.Id_Kont_klient %></td>
-        <td><%= dost_marketingowe.Typ %></td>
-        <td><%= dost_marketingowe.Ile %></td>
-        <td><%= link_to 'Show', dost_marketingowe %></td>
-        <td><%= link_to 'Edit', edit_dost_marketingowe_path(dost_marketingowe) %></td>
-        <td><%= link_to 'Destroy', dost_marketingowe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= dost_marketingowe.kontrahenci.nazwa %></td>
+        <td><%= dost_marketingowe.typ %></td>
+        <td><%= dost_marketingowe.ile %></td>
+        <td><%= dost_marketingowe.data %></td>
+        <td><%= link_to 'Show', dost_marketingowe,  class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_dost_marketingowe_path(dost_marketingowe),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', dost_marketingowe, method: :delete,  class: "btn btn-link", data: { confirm: 'Jesteś pewien?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Dost marketingowe', new_dost_marketingowe_path %>
+<%= link_to 'Dodaj dostawę marketingową', new_dost_marketingowe_path %>

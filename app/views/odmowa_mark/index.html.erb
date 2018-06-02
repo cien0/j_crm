@@ -5,7 +5,7 @@
 </div>
 
 
-<table class="table-bordered table-striped table-hover align-middle">
+<table class="table table-bordered table-striped table-hover align-middle">
   <thead>
     <tr>
       <th>Kont klient</th>
@@ -18,7 +18,7 @@
   <tbody>
     <% @odmowa_mark.each do |odmowa_mark| %>
       <tr>
-        <td><%= odmowa_mark.kont_klient_id %></td>
+        <td><%= odmowa_mark.kontrahenci.nazwa %></td>
         <td><%= odmowa_mark.odmowa_typ.typ %></td>
         <td><%= odmowa_mark.data %></td>
         <td><%= link_to 'Pokaż', odmowa_mark,  class: "btn btn-link"  %></td>

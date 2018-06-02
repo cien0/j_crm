@@ -81,6 +81,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def odmowa_mark_params
-      params.require(:odmowa_mark).permit(:kont_klient_id, :odmowa_typ_id, :data)
+      params.require(:odmowa_mark).permit(:kontrahenci_id, :odmowa_typ_id, :data)
     end
 end

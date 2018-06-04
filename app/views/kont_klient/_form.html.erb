@@ -35,6 +35,9 @@
     <%= f.label :inf_dodat %><br>
     <%= f.text_area :inf_dodat, cols: "80", rows: "6" %>
   </div>
+  <div class="field">
+    <%= f.hidden_field :opiekun_id , :value => current_user.id-1 %> <!-- current_user.id %-->
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

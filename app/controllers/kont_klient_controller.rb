@@ -5,6 +5,11 @@ class KontKlientController < ApplicationController
   # GET /kont_klient.json
   def index
     @kont_klient = KontKlient.all
+     respond_to do |format|
+      format.html
+      format.csv { render text: @kont_klient.to_csv }
+      format.txt { render text: @kont_klient.to_txt }
+    end
   end
 
   # GET /kont_klient/1
@@ -69,6 +74,6 @@ class KontKlientController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kont_klient_params
-      params.require(:kont_klient).permit(:Id_Kontrahenci, :Data, :Typ, :Cel, :Raport, :Inf_dodat)
+      params.require(:kont_klient).permit(:kontrahenci_id, :opiekun_id, :data, :typ_spotkania_id, :cel_kontaktu_id, :raport, :inf_dodat)
     end
 end

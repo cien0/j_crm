@@ -4,8 +4,13 @@
 </p>
 
 <p>
+  <strong>Opiekun kontaktu:</strong>
+  <%= @kont_klient.opiekun.login %>
+</p>
+
+<p>
   <strong>Data:</strong>
-  <%= @kont_klient.dodatata %>
+  <%= @kont_klient.data %>
 </p>
 
 <p>
@@ -15,7 +20,7 @@
 
 <p>
   <strong>Cel spotkania:</strong>
-  <%= @kont_klient.cel_spotkania.cel %>
+  <%= @kont_klient.cel_kontaktu.cel %>
 </p>
 
 <p>
@@ -28,5 +33,5 @@
   <%= @kont_klient.inf_dodat %>
 </p>
 
-<%= link_to 'Edit', edit_kont_klient_path(@kont_klient) %> |
-<%= link_to 'Back', kont_klient_index_path %>
+<%= link_to 'Edycja', edit_kont_klient_path(@kont_klient) %> |
+<%= link_to 'Powrót', kont_klient_index_path %>

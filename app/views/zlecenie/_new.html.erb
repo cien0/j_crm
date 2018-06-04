@@ -36,7 +36,7 @@
     <%= f.hidden_field :status_zlecenia_id , :value => 1 %>
   </div>
     <div class="field">
-    <%= f.hidden_field :kierownik_id , :value => 1 %> <!-- current_user.id %-->
+    <%= f.hidden_field :kierownik_id , :value => current_user.id - 1 %> <!-- current_user.id %-->
   </div>
   <div class="field">
     <%= f.hidden_field :data_utworzenia, :value => Time.now.strftime("%Y-%m-%d") %>

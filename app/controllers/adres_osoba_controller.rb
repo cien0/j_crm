@@ -69,6 +69,6 @@ class AdresOsobaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adres_osoba_params
-      params.require(:adres_osoba).permit(:Id_Osoba_kont, :Typ, :Kraj, :Kod_pocztowy, :Miasto, :Skrytka, :Ulica, :Nr_budynku, :Nr_lokalu, :Opis)
+      params.require(:adres_osoba).permit(:osoba_kont_id, :typ_adresu_id, :kraj, :kod_pocztowy, :miasto, :skrytka, :ulica, :nr_budynku, :nr_lokalu, :opis)
     end
 end

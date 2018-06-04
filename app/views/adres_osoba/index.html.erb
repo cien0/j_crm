@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Adres Osoba</h1>
+<h1>Lista adresów osób kont.</h1>
 
 <table>
   <thead>
@@ -22,16 +20,16 @@
   <tbody>
     <% @adres_osoba.each do |adres_osoba| %>
       <tr>
-        <td><%= adres_osoba.Id_Osoba_kont %></td>
-        <td><%= adres_osoba.Typ %></td>
-        <td><%= adres_osoba.Kraj %></td>
-        <td><%= adres_osoba.Kod_pocztowy %></td>
-        <td><%= adres_osoba.Miasto %></td>
-        <td><%= adres_osoba.Skrytka %></td>
-        <td><%= adres_osoba.Ulica %></td>
-        <td><%= adres_osoba.Nr_budynku %></td>
-        <td><%= adres_osoba.Nr_lokalu %></td>
-        <td><%= adres_osoba.Opis %></td>
+        <td><%= adres_osoba.osoba_kont_id %></td>
+        <td><%= adres_osoba.typ_adresu_id %></td>
+        <td><%= adres_osoba.kraj %></td>
+        <td><%= adres_osoba.kod_pocztowy %></td>
+        <td><%= adres_osoba.miasto %></td>
+        <td><%= adres_osoba.skrytka %></td>
+        <td><%= adres_osoba.ulica %></td>
+        <td><%= adres_osoba.nr_budynku %></td>
+        <td><%= adres_osoba.nr_lokalu %></td>
+        <td><%= adres_osoba.opis %></td>
         <td><%= link_to 'Show', adres_osoba %></td>
         <td><%= link_to 'Edit', edit_adres_osoba_path(adres_osoba) %></td>
         <td><%= link_to 'Destroy', adres_osoba, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -69,6 +69,6 @@ class AdresKontrController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adres_kontr_params
-      params.require(:adres_kontr).permit(:Id_Kontrahenci, :Typ, :Kraj, :Kod_pocztowy, :Miasto, :Skrytka, :Ulica, :Nr_budynku, :Nr_lokalu)
+      params.require(:adres_kontr).permit(:kontrahenci_id, :typ_adresu_id, :kraj, :kod_pocztowy, :miasto, :skrytka, :ulica, :nr_budynku, :nr_lokalu)
     end
 end

@@ -12,40 +12,40 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :Id_Kontrahenci %><br>
-    <%= f.number_field :Id_Kontrahenci %>
+    <%= f.label :kontrahenci_id %><br>
+    <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => ""}, { :class => "chosen-select" }  %>
   </div>
   <div class="field">
-    <%= f.label :Typ %><br>
-    <%= f.number_field :Typ %>
+    <%= f.label :typ_adresu_id %><br>
+    <%= f.select :typ_adresu_id, options_from_collection_for_select( TypAdresu.all, 'id', 'typ', @adres_kontr.typ_adresu_id.to_s), :prompt => ""%>
   </div>
   <div class="field">
-    <%= f.label :Kraj %><br>
-    <%= f.text_field :Kraj %>
+    <%= f.label :kraj %><br>
+    <%= f.text_field :kraj %>
   </div>
   <div class="field">
-    <%= f.label :Kod_pocztowy %><br>
-    <%= f.text_field :Kod_pocztowy %>
+    <%= f.label :kod_pocztowy %><br>
+    <%= f.text_field :kod_pocztowy %>
   </div>
   <div class="field">
-    <%= f.label :Miasto %><br>
-    <%= f.text_field :Miasto %>
+    <%= f.label :miasto %><br>
+    <%= f.text_field :miasto %>
   </div>
   <div class="field">
-    <%= f.label :Skrytka %><br>
-    <%= f.text_field :Skrytka %>
+    <%= f.label :skrytka %><br>
+    <%= f.text_field :skrytka %>
   </div>
   <div class="field">
-    <%= f.label :Ulica %><br>
-    <%= f.text_field :Ulica %>
+    <%= f.label :ulica %><br>
+    <%= f.text_field :ulica %>
   </div>
   <div class="field">
-    <%= f.label :Nr_budynku %><br>
-    <%= f.text_field :Nr_budynku %>
+    <%= f.label :nr_budynku %><br>
+    <%= f.text_field :nr_budynku %>
   </div>
   <div class="field">
-    <%= f.label :Nr_lokalu %><br>
-    <%= f.text_field :Nr_lokalu %>
+    <%= f.label :nr_lokalu %><br>
+    <%= f.text_field :nr_lokalu %>
   </div>
   <div class="actions">
     <%= f.submit %>

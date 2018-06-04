@@ -1,10 +1,9 @@
-<p id="notice"><%= notice %></p>
+<h1>Lista osób kontaktowych</h1>
 
-<h1>Listing Osoba Kont</h1>
-
-<table>
+<table  class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
+      <th>Kontrahent</th>
       <th>Imie</th>
       <th>Imiona</th>
       <th>Nazwisko</th>
@@ -16,13 +15,14 @@
   <tbody>
     <% @osoba_kont.each do |osoba_kont| %>
       <tr>
-        <td><%= osoba_kont.Imie %></td>
-        <td><%= osoba_kont.Imiona %></td>
-        <td><%= osoba_kont.Nazwisko %></td>
-        <td><%= osoba_kont.Data_urodz %></td>
-        <td><%= link_to 'Show', osoba_kont %></td>
-        <td><%= link_to 'Edit', edit_osoba_kont_path(osoba_kont) %></td>
-        <td><%= link_to 'Destroy', osoba_kont, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= osoba_kont.kontrahenci.nazwa %></td>
+        <td><%= osoba_kont.imie %></td>
+        <td><%= osoba_kont.imiona %></td>
+        <td><%= osoba_kont.nazwisko %></td>
+        <td><%= osoba_kont.data_urodz %></td>
+        <td><%= link_to 'Show', osoba_kont,  class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_osoba_kont_path(osoba_kont),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', osoba_kont,  class: "btn btn-link", method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Osoba kont', new_osoba_kont_path %>
+<%= link_to 'Nowa osoba kontaktowa', new_osoba_kont_path %>

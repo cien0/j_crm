@@ -11,21 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :Imie %><br>
-    <%= f.text_field :Imie %>
+ <div class="field">
+    <%= f.label "Kontrahent" %><br>
+    <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => ""}, { :class => "chosen-select" } %>
   </div>
   <div class="field">
-    <%= f.label :Imiona %><br>
-    <%= f.text_field :Imiona %>
+    <%= f.label :imie %><br>
+    <%= f.text_field :imie %>
   </div>
   <div class="field">
-    <%= f.label :Nazwisko %><br>
-    <%= f.text_field :Nazwisko %>
+    <%= f.label :imiona %><br>
+    <%= f.text_field :imiona %>
   </div>
   <div class="field">
-    <%= f.label :Data_urodz %><br>
-    <%= f.date_select :Data_urodz %>
+    <%= f.label :nazwisko %><br>
+    <%= f.text_field :nazwisko %>
+  </div>
+  <div class="field">
+    <%= f.label "Data urodzenia" %><br>
+    <%= f.date_select :data_urodz, :start_year => Date.current.year - 70 , :end_year => Date.current.year  %>
   </div>
   <div class="actions">
     <%= f.submit %>

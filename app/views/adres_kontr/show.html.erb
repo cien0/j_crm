@@ -1,49 +1,47 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Id kontrahenci:</strong>
-  <%= @adres_kontr.Id_Kontrahenci %>
+  <%= @adres_kontr.kontrahenci.nazwa %>
 </p>
 
 <p>
   <strong>Typ:</strong>
-  <%= @adres_kontr.Typ %>
+  <%= @adres_kontr.typ_adresu.typ %>
 </p>
 
 <p>
   <strong>Kraj:</strong>
-  <%= @adres_kontr.Kraj %>
+  <%= @adres_kontr.kraj %>
 </p>
 
 <p>
   <strong>Kod pocztowy:</strong>
-  <%= @adres_kontr.Kod_pocztowy %>
+  <%= @adres_kontr.kod_pocztowy %>
 </p>
 
 <p>
   <strong>Miasto:</strong>
-  <%= @adres_kontr.Miasto %>
+  <%= @adres_kontr.miasto %>
 </p>
 
 <p>
   <strong>Skrytka:</strong>
-  <%= @adres_kontr.Skrytka %>
+  <%= @adres_kontr.skrytka %>
 </p>
 
 <p>
   <strong>Ulica:</strong>
-  <%= @adres_kontr.Ulica %>
+  <%= @adres_kontr.ulica %>
 </p>
 
 <p>
   <strong>Nr budynku:</strong>
-  <%= @adres_kontr.Nr_budynku %>
+  <%= @adres_kontr.nr_budynku %>
 </p>
 
 <p>
   <strong>Nr lokalu:</strong>
-  <%= @adres_kontr.Nr_lokalu %>
+  <%= @adres_kontr.nr_lokalu %>
 </p>
 
-<%= link_to 'Edit', edit_adres_kontr_path(@adres_kontr) %> |
-<%= link_to 'Back', adres_kontr_index_path %>
+<%= link_to 'Edycja', edit_adres_kontr_path(@adres_kontr) %> |
+<%= link_to 'Powrót', adres_kontr_index_path %>

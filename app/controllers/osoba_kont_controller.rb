@@ -69,6 +69,6 @@ class OsobaKontController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def osoba_kont_params
-      params.require(:osoba_kont).permit(:Imie, :Imiona, :Nazwisko, :Data_urodz)
+      params.require(:osoba_kont).permit(:kontrahenci_id, :imie, :imiona, :nazwisko, :data_urodz)
     end
 end

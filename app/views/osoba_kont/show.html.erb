@@ -1,23 +1,27 @@
-<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kontrahent:</strong>
+  <%= @osoba_kont.kontrahenci.nazwa %>
+</p>
 
 <p>
   <strong>Imie:</strong>
-  <%= @osoba_kont.Imie %>
+  <%= @osoba_kont.imie %>
 </p>
 
 <p>
   <strong>Imiona:</strong>
-  <%= @osoba_kont.Imiona %>
+  <%= @osoba_kont.imiona %>
 </p>
 
 <p>
   <strong>Nazwisko:</strong>
-  <%= @osoba_kont.Nazwisko %>
+  <%= @osoba_kont.nazwisko %>
 </p>
 
 <p>
   <strong>Data urodz:</strong>
-  <%= @osoba_kont.Data_urodz %>
+  <%= @osoba_kont.data_urodz %>
 </p>
 
 <%= link_to 'Edit', edit_osoba_kont_path(@osoba_kont) %> |

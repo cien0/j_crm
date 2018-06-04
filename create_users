@@ -13,9 +13,9 @@ INSERT INTO opiekun (id,imie,nazwisko,login,aktywny,created_at,updated_at) VALUE
 INSERT INTO kierownik (id,imie,nazwisko,login,aktywny,created_at,updated_at) VALUES (1,'Franciszek','Dudek','m001',1,'2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
 
 
-INSERT INTO typ_adresu (id,typ,encrypted_password,created_at,updated_at) VALUES (1, 'korespondncyjny','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
-INSERT INTO typ_adresu (id,typ,encrypted_password,created_at,updated_at) VALUES (2, 'dostawy','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
-INSERT INTO typ_adresu (id,typ,encrypted_password,created_at,updated_at) VALUES (3, 'inny','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_adresu (id,typ,created_at,updated_at) VALUES (1, 'korespodencyjny','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_adresu (id,typ,created_at,updated_at) VALUES (2, 'dostawy','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
+INSERT INTO typ_adresu (id,typ,created_at,updated_at) VALUES (3, 'inny','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
 INSERT INTO status_text (id,status_text,created_at,updated_at) VALUES (0, 'nowy','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
 INSERT INTO status_text (id,status_text,created_at,updated_at) VALUES (1, 'pozyskany','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');
 INSERT INTO status_text (id,status_text,created_at,updated_at) VALUES (2, 'aktywny','2018-05-07 10:52:16.326967','2018-05-07 13:08:42.044744');

@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :Id_Kontrahenci %><br>
-    <%= f.number_field :Id_Kontrahenci %>
+    <%= f.label :kontrahenci_id %><br>
+     <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => "Wybierz klienta"}, { :class => "chosen-select form-control" } %>
   </div>
   <div class="field">
-    <%= f.label :Data %><br>
-    <%= f.date_select :Data %>
+    <%= f.label :data %><br>
+    <%= f.date_select :data %>
   </div>
   <div class="field">
-    <%= f.label :Typ %><br>
-    <%= f.number_field :Typ %>
+    <%= f.label :typ %><br>
+    <%=  f.select :typ_spotkania_id, options_from_collection_for_select( TypSpotkania.all, 'id', 'typ', @kont_klient.typ_spotkania_id.to_s), :prompt => "" %>
   </div>
   <div class="field">
-    <%= f.label :Cel %><br>
-    <%= f.number_field :Cel %>
+    <%= f.label :cel %><br>
+    <%=  f.select :cel_kontaktu_id, options_from_collection_for_select( CelKontaktu.all, 'id', 'cel', @kont_klient.cel_kontaktu_id.to_s), :prompt => "" %>
   </div>
   <div class="field">
-    <%= f.label :Raport %><br>
-    <%= f.text_area :Raport %>
+    <%= f.label :raport %><br>
+    <%= f.text_area :raport, cols: "80", rows: "6" %>
   </div>
   <div class="field">
-    <%= f.label :Inf_dodat %><br>
-    <%= f.text_area :Inf_dodat %>
+    <%= f.label :inf_dodat %><br>
+    <%= f.text_area :inf_dodat, cols: "80", rows: "6" %>
   </div>
   <div class="actions">
     <%= f.submit %>

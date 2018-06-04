@@ -1,3 +1,5 @@
 class KontKlient < ActiveRecord::Base
-    has_one :odmowa
+    belongs_to :typ_spotkania
+    belongs_to :cel_spotkania
+    belongs_to :kontrahenci
 end

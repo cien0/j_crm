@@ -67,15 +67,13 @@
                 <nav class="navbar navbar-light bg-light">
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                             <li class="dropdown">
+                            
+                            <li><%= link_to 'Nowy kontakt z klientem', new_kont_klient_path, class: "text-white bg-danger" %></li> 
+                            <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Kontrahenci<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li>
                                     <li><%= link_to('Edycja Kontrahentów', kontrahenci_index_path) %></li>
-                                    </li>
-                                    <li>
-                                        <%= link_to('Adresy kontrahentów', adres_kontr_index_path) %>
-                                    </li>
+                                    <li><%= link_to('Adresy kontrahentów', adres_kontr_index_path) %></li>
                                 </ul>
                             </li>         
                             <li class="dropdown">
@@ -86,6 +84,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            
                             <li><%= link_to('Dodanie zlecenia', zlecenie_index_path) %></li>
                             <li><%= link_to('Dostawy marketingowe', dost_marketingowe_index_path) %></li>
                             <li><%= link_to('Odmowa', odmowa_mark_index_path) %></li>
@@ -96,7 +95,8 @@
                 <% else %>
                 <nav class="navbar navbar-light bg-light">
                     <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">         
+                        <ul class="nav navbar-nav">
+                            <li><%= link_to 'Nowy kontakt z klientem', new_kont_klient_path, class: "text-white bg-danger" %></li>         
                             <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Kontrahenci<span class="caret"></span></a>
                                 <ul class="dropdown-menu">

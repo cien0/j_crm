@@ -1,33 +1,31 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Id kontrahenci:</strong>
-  <%= @kont_klient.Id_Kontrahenci %>
+  <strong>Kontrahent:</strong>
+  <%= @kont_klient.kontrahenci.nazwa %>
 </p>
 
 <p>
   <strong>Data:</strong>
-  <%= @kont_klient.Data %>
+  <%= @kont_klient.dodatata %>
 </p>
 
 <p>
-  <strong>Typ:</strong>
-  <%= @kont_klient.Typ %>
+  <strong>Typ spotkania:</strong>
+  <%= @kont_klient.typ_spotkania.typ %>
 </p>
 
 <p>
-  <strong>Cel:</strong>
-  <%= @kont_klient.Cel %>
+  <strong>Cel spotkania:</strong>
+  <%= @kont_klient.cel_spotkania.cel %>
 </p>
 
 <p>
   <strong>Raport:</strong>
-  <%= @kont_klient.Raport %>
+  <%= @kont_klient.raport %>
 </p>
 
 <p>
   <strong>Inf dodat:</strong>
-  <%= @kont_klient.Inf_dodat %>
+  <%= @kont_klient.inf_dodat %>
 </p>
 
 <%= link_to 'Edit', edit_kont_klient_path(@kont_klient) %> |

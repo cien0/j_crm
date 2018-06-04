@@ -1,6 +1,6 @@
 <h1>Lista adresów osób kont.</h1>
 
-<table>
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Id osoba kont</th>
@@ -8,11 +8,9 @@
       <th>Kraj</th>
       <th>Kod pocztowy</th>
       <th>Miasto</th>
-      <th>Skrytka</th>
       <th>Ulica</th>
       <th>Nr budynku</th>
       <th>Nr lokalu</th>
-      <th>Opis</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,19 +18,17 @@
   <tbody>
     <% @adres_osoba.each do |adres_osoba| %>
       <tr>
-        <td><%= adres_osoba.osoba_kont_id %></td>
-        <td><%= adres_osoba.typ_adresu_id %></td>
+        <td><%= adres_osoba.osoba_kont.imie_and_nazwisko %></td>
+        <td><%= adres_osoba.typ_adresu.typ %></td>
         <td><%= adres_osoba.kraj %></td>
         <td><%= adres_osoba.kod_pocztowy %></td>
         <td><%= adres_osoba.miasto %></td>
-        <td><%= adres_osoba.skrytka %></td>
         <td><%= adres_osoba.ulica %></td>
         <td><%= adres_osoba.nr_budynku %></td>
         <td><%= adres_osoba.nr_lokalu %></td>
-        <td><%= adres_osoba.opis %></td>
-        <td><%= link_to 'Show', adres_osoba %></td>
-        <td><%= link_to 'Edit', edit_adres_osoba_path(adres_osoba) %></td>
-        <td><%= link_to 'Destroy', adres_osoba, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', adres_osoba,  class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_adres_osoba_path(adres_osoba),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', adres_osoba,  class: "btn btn-link", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -16,10 +16,10 @@
   <tbody>
     <% @obroty.each do |obroty| %>
       <tr>
-        <td><%= obroty.Id_kontrahenci %></td>
-        <td><%= obroty.Rok %></td>
-        <td><%= obroty.Miesiac %></td>
-        <td><%= obroty.Kwota %></td>
+        <td><%= obroty.kontrahenci_id %></td>
+        <td><%= obroty.rok %></td>
+        <td><%= obroty.miesiac %></td>
+        <td><%= obroty.kwota %></td>
         <td><%= link_to 'Show', obroty %></td>
         <td><%= link_to 'Edit', edit_obroty_path(obroty) %></td>
         <td><%= link_to 'Destroy', obroty, method: :delete, data: { confirm: 'Are you sure?' } %></td>

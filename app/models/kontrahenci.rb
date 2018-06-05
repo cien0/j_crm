@@ -1,4 +1,5 @@
 class Kontrahenci < ActiveRecord::Base
 belongs_to :opiekun
-has_one :kont_klient
+belongs_to :kont_klient
+belongs_to :status
 end

@@ -1,4 +1,4 @@
-<p class="lead">Podgląd: <%=@kontrahenci.nazwa %></p>
+<p class="lead" >Podgląd: <%=@kontrahenci.nazwa %></p>
 
   <table class="table table-bordered table-hover">
   <tr><td><strong>Id system</strong></td><td><strong>Nazwa</strong></td></tr>
@@ -15,7 +15,9 @@
   <tr><td><%= @kontrahenci.numer_tel %></td><td><%= @kontrahenci.numer_fak %></td></tr>
 </table>
 
-<div>
+
+<button type="button" id="faktury" class="btn btn-primary">Pokaż Faktury</button>
+<div id="faktury" class="">
   <table class="table table-bordered table-striped table-hover">
     <thead>
     <tr>
@@ -38,8 +40,11 @@
  <% end %>
   </table>
 </div>
-
-<div>
+</br>
+</br>
+</br>
+<button type="button" id="obroty" class="btn btn-primary">Pokaż Obroty</button>
+<div id="obroty" class="">
   <table class="table table-bordered table-striped table-hover">
     <thead>
     <tr>
@@ -61,6 +66,9 @@
  <% end %>
  </table>
 </div>
+</br>
+</br>
+</br>
 
 <div>
 <%= link_to 'Powrót', kontrahenci_index_path %>

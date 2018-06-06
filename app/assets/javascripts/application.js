@@ -15,3 +15,21 @@
 //= require bootstrap
 //= require_tree .
 //= require chosen-jquery
+/*global $*/
+$(function() {
+    $("div#faktury").hide();
+    $("button#faktury").click(function(event) {
+        event.preventDefault();
+        $("div#faktury").toggle(1000);
+    });
+});
+
+$(function() {
+    $("div#obroty").hide();
+    $("button#obroty").click(function(event) {
+        event.preventDefault();
+        $("div#obroty").toggle(1000);
+    });
+});
+
+

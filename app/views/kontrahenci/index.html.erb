@@ -11,6 +11,7 @@
       <th>Nazwa</th>
       <th>Nip</th>
       <th>Id opiekun</th>
+      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,7 +23,8 @@
         <td><%= kontrahenci.nazwa %></td>
         <td><%= kontrahenci.nip %></td>
         <td><%= kontrahenci.opiekun.login %></td>
-        <td><%= link_to 'Pokaż', kontrahenci,  class: "btn btn-link" %></td>
+        <td><%= kontrahenci.status_text.status_text %></td>
+        <td><%= link_to 'Pokaż', kontrahenci_lista_url(kontrahenci),  class: "btn btn-link" %></td>
         <td><%= link_to 'Edytuj', edit_kontrahenci_path(kontrahenci),  class: "btn btn-link" %></td>
         <td><%= link_to 'Kasuj', kontrahenci, method: :delete,  class: "btn btn-link",  data: { confirm: 'Czy jesteś pewny??'} %></td>
       </tr>

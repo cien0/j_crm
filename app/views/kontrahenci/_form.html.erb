@@ -14,6 +14,14 @@
     <%= f.text_field :nazwa %>
   </div>
   <div class="field">
+    <%= f.label :status_text_id %><br>
+    <%= f.select :status_text_id, options_from_collection_for_select(StatusText.all, 'id', 'status_text', @kontrahenci.status_text_id.to_s), :prompt => "" %>
+  </div>
+    <div class="field">
+    <%= f.label :opiekun_id %><br>
+    <%= f.select :opiekun_id, options_from_collection_for_select(Opiekun.all, 'id', 'login', @kontrahenci.opiekun_id.to_s), :prompt => "" %>
+  </div>
+  <div class="field">
     <%= f.label :nip %><br>
     <%= f.text_field :nip %>
   </div>
@@ -33,10 +41,7 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :opiekun_id %><br>
-    <%= f.select :opiekun_id, options_from_collection_for_select(Opiekun.all, 'id', 'login', @kontrahenci.opiekun_id.to_s), :prompt => "" %>
-  </div>
+</br>
   <div class="actions">
     <%= f.submit %>
   </div>

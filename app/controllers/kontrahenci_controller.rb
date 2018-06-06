@@ -1,5 +1,5 @@
 class KontrahenciController < ApplicationController
-  before_action :set_kontrahenci, only: [:show, :edit, :update, :destroy]
+  before_action :set_kontrahenci, only: [:show, :edit, :update, :destroy, :lista]
 
   # GET /kontrahenci
   # GET /kontrahenci.json
@@ -11,6 +11,21 @@ class KontrahenciController < ApplicationController
   # GET /kontrahenci/1.json
   def show
   end
+
+  # GET /kontrahenci/1
+  # GET /kontrahenci/1.json
+  def lista
+    @kontrahenci = Kontrahenci.find(params[:id])
+    @faktury = Faktury.where(:kontrahenci_id => @kontrahenci.id)
+    if @faktury.nil? then
+      @faktury = []
+    end
+    @obroty = Obroty.where(:kontrahenci_id => @kontrahenci.id).last(6)
+    if @obroty.nil? then
+      @obroty = []
+    end
+  end
+
 
   # GET /kontrahenci/new
   def new
@@ -72,6 +87,6 @@ class KontrahenciController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kontrahenci_params
-      params.require(:kontrahenci).permit(:system_id, :nazwa, :nip, :www, :numer_tel, :numer_fak, :email, :opiekun_id)
+      params.require(:kontrahenci).permit(:system_id, :status_text_id, :nazwa, :nip, :www, :numer_tel, :numer_fak, :email, :opiekun_id)
     end
 end

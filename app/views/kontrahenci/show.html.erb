@@ -9,6 +9,16 @@
 </p>
 
 <p>
+  <strong>Status:</strong>
+  <%= @kontrahenci.status_text.status_text %>
+</p>
+
+<p>
+  <strong>Id opiekun:</strong>
+  <%= @kontrahenci.opiekun.login %>
+</p>
+
+<p>
   <strong>Nip:</strong>
   <%= @kontrahenci.nip %>
 </p>
@@ -33,11 +43,6 @@
   <%= @kontrahenci.email %>
 </p>
 
-<p>
-  <strong>Id opiekun:</strong>
-  <%= @kontrahenci.opiekun.login %>
-  <!-- #% Opiekun.find_by(id: @kontrahenci.opiekun_id ).login %-->
-</p>
 
 <%= link_to 'Edit', edit_kontrahenci_path(@kontrahenci) %> |
 <%= link_to 'Back', kontrahenci_index_path %>

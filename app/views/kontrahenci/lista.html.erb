@@ -1,0 +1,67 @@
+<p class="lead">Podgląd: <%=@kontrahenci.nazwa %></p>
+
+  <table class="table table-bordered table-hover">
+  <tr><td><strong>Id system</strong></td><td><strong>Nazwa</strong></td></tr>
+  <tr><td><%= @kontrahenci.system_id %></td><td><%= @kontrahenci.nazwa %></td></tr>
+  <tr><td><strong>Status</strong></td></tr>
+  <tr><td> <%= @kontrahenci.status_text.status_text %></td></tr>
+  <tr><td><strong>Identyfikator opiekuna</strong></td></tr>
+  <tr><td><%= @kontrahenci.opiekun.login %></td></tr>
+    <tr><td><strong>NIP</strong></td></tr>
+  <tr><td> <%= @kontrahenci.nip %></td></tr>
+  <tr><td><strong>Www</strong></td><td><strong>Email</strong></td></tr>
+  <tr><td><%= @kontrahenci.www %></td><td> <%= @kontrahenci.email %></td></tr>
+  <tr><td><strong>Numer telefonu</strong></td><td><strong>Numer faksu</strong></td></tr>
+  <tr><td><%= @kontrahenci.numer_tel %></td><td><%= @kontrahenci.numer_fak %></td></tr>
+</table>
+
+<div>
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nazwa</th>
+      <th>Nip</th>
+      <th>Id opiekun</th>
+      <th>Status</th>
+      </tr>
+  </thead>
+  
+<% @faktury.each do |faktury| %>
+        <tr>
+        <td><%= faktury.id %></td>
+        <td><%= faktury.kontrahenci_id %></td>
+        <td><%= faktury.nr_faktury %></td>
+        <td><%= faktury.kwota %></td>
+        <td><%= faktury.vat %></td>
+        </tr>
+ <% end %>
+  </table>
+</div>
+
+<div>
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nazwa</th>
+      <th>Rok</th>
+      <th>Miesiac</th>
+      <th>Kwota</th>
+      </tr>
+  </thead>
+ <% @obroty.each do |obroty| %>
+<tr>
+        <td><%= obroty.id %></td>
+        <td><%= obroty.kontrahenci.nazwa %></td>
+        <td><%= obroty.rok %></td>
+        <td><%= obroty.miesiac %></td>
+        <td><%= obroty.kwota %></td>
+</tr>
+ <% end %>
+ </table>
+</div>
+
+<div>
+<%= link_to 'Powrót', kontrahenci_index_path %>
+</div>

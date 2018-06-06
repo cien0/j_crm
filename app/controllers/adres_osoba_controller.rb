@@ -1,10 +1,19 @@
 class AdresOsobaController < ApplicationController
-  before_action :set_adres_osoba, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_adres_osoba, only: [:show, :edit, :update, :destroy, :lista]
+  before_action :set_osoba_kont, only: [:lista]
+  
   # GET /adres_osoba
   # GET /adres_osoba.json
   def index
     @adres_osoba = AdresOsoba.all
+  end
+  
+  def lista
+    @adres_osoba = AdresOsoba.where(:osoba_kont_id => params[:id])
+    @kontrahent = @osoba_kont.kontrahenci_id
+    if @adres_osoba.nil? then
+      @adres_osoba  = []
+    end
   end
 
   # GET /adres_osoba/1
@@ -65,6 +74,9 @@ class AdresOsobaController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_adres_osoba
       @adres_osoba = AdresOsoba.find(params[:id])
+    end
+    def set_osoba_kont
+      @osoba_kont = OsobaKont.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

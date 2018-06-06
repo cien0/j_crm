@@ -32,4 +32,12 @@ $(function() {
     });
 });
 
+$(function() {
+    $("div#osoby").hide();
+    $("button#osoby").click(function(event) {
+        event.preventDefault();
+        $("div#osoby").toggle(1000);
+    });
+});
+
 

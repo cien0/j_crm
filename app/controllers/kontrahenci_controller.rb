@@ -24,6 +24,10 @@ class KontrahenciController < ApplicationController
     if @obroty.nil? then
       @obroty = []
     end
+    @osoby = OsobaKont.where(:kontrahenci_id => @kontrahenci.id)
+    if @osoby.nil? then
+      @osoby = []
+    end
   end
 
 

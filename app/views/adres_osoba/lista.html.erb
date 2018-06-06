@@ -11,7 +11,7 @@
       <th>Ulica</th>
       <th>Nr budynku</th>
       <th>Nr lokalu</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -26,14 +26,14 @@
         <td><%= adres_osoba.ulica %></td>
         <td><%= adres_osoba.nr_budynku %></td>
         <td><%= adres_osoba.nr_lokalu %></td>
-        <td><%= link_to 'Show', adres_osoba,  class: "btn btn-link" %></td>
-        <td><%= link_to 'Edit', edit_adres_osoba_path(adres_osoba),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_adres_osoba_path(adres_osoba.id),  class: "btn btn-link" %></td>
         <td><%= link_to 'Destroy', adres_osoba,  class: "btn btn-link", method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'Nowy adres osoby kontaktowej', new_adres_osoba_path %>
+<div>
+<%= link_to 'Nowy Adres', new_adres_osoba_path,  class: "btn btn-link"%>  
+<%= link_to 'Powrót', kontrahenci_lista_url(@kontrahent ),  class: "btn btn-link" %>
+</div>

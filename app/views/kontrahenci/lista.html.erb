@@ -69,7 +69,30 @@
 </br>
 </br>
 </br>
-
+<button type="button" id="osoby" class="btn btn-primary">Pokaż Osoby Kontaktowe</button>
+<div id="osoby" class="">
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th colspan="1"></th>
+      </tr>
+  </thead>
+ <% @osoby.each do |osoba| %>
+<tr>
+        <td><%= osoba.id %></td>
+        <td><%= osoba.imie %></td>
+        <td><%= osoba.nazwisko %></td>
+        <td><%= link_to 'Adresy', adres_osoba_lista_path(osoba),  class: "btn btn-link" %></td>
+</tr>
+ <% end %>
+ </table>
+</div>
+</br>
+</br>
+</br>
 <div>
 <%= link_to 'Powrót', kontrahenci_index_path %>
 </div>

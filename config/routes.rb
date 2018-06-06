@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post 'load_faktury/upload'
   get 'load_faktury/create'
   get 'kontrahenci/:id/lista', to: 'kontrahenci#lista', as: 'kontrahenci_lista'
+  get 'adres_osoba/:id/lista', to: 'adres_osoba#lista', as: 'adres_osoba_lista'
   get 'zlecenie/:id/realizacja', to: 'zlecenie#realizacja', as: 'zlecenie_realizacja'
   get 'zlecenie/lista', to: 'zlecenie#lista'
   resources :odmowa_mark

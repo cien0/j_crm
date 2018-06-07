@@ -93,4 +93,20 @@ class KontrahenciController < ApplicationController
     def kontrahenci_params
       params.require(:kontrahenci).permit(:system_id, :status_text_id, :nazwa, :nip, :www, :numer_tel, :numer_fak, :email, :opiekun_id)
     end
+    #ustalenie statusu kontrahenta na podstawie jego obrotów
+    def statusy
+      
+    @kontrahenci = Kontrahenci.all
+    @kontrahenci.each do |kontrahenci|
+   
+    end
+   
+    m3=1.months.ago.month
+    m6=3.months.ago.month
+    y3=1.months.ago.year
+    y6=3.months.ago.year
+    @kontrahenci = Kontrahenci.find(:all)
+    
+    end
+    
 end

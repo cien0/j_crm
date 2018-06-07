@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'load_faktury/upload'
   post 'load_faktury/upload'
   get 'load_faktury/create'
+   get 'status/edit', to: 'status#edit', as: 'status_edit'
   get 'kontrahenci/:id/lista', to: 'kontrahenci#lista', as: 'kontrahenci_lista'
   get 'adres_osoba/:id/lista', to: 'adres_osoba#lista', as: 'adres_osoba_lista'
   get 'zlecenie/:id/realizacja', to: 'zlecenie#realizacja', as: 'zlecenie_realizacja'

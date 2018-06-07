@@ -27,5 +27,6 @@ def self.import!
           Obroty.create!(:kontrahenci_id => row[0], :rok => row[1], :miesiac => row[2], :kwota => row[3])
    #end
    end
+   
 end
 end

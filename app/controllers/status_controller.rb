@@ -1,10 +1,10 @@
 class StatusController < ApplicationController
-  before_action :set_status, only: [:show, :edit, :update, :destroy]
+  before_action :set_status, only: [:show, :update, :destroy]
 
   # GET /status
   # GET /status.json
   def index
-    @status = Status.all
+    @status = Kontrahenci.all.paginate(:page => params[:page])
   end
 
   # GET /status/1
@@ -19,6 +19,16 @@ class StatusController < ApplicationController
 
   # GET /status/1/edit
   def edit
+    @kontrahenci = Kontrahenci.all
+    @obroty = Obroty.all
+    @kontrahenci.each do |kontrahent|
+      ktory=kontrahent.id
+      m1=1.month.ago.month
+      y1=1.month.ago.year
+      @saldo1= Obroty.where({ kontrahenci_id:  ktory, rok: y1, miesiac: m1 }).take
+      pry 
+     
+    end
   end
 
   # POST /status

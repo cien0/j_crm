@@ -1,4 +1,4 @@
-<h1>Listing Status</h1>
+<h1>Lista statusów</h1>
 </br>
 <div class="digg_pagination">
 <%= will_paginate @status %>
@@ -20,18 +20,10 @@
         <td><%= status.id %></td>
         <td><%= status.nazwa %></td>
         <td><%= status.status_text.status_text %></td>
-        <td><%= link_to 'Show', status %></td>
-        <td><%= link_to 'Edit', edit_status_path(status) %></td>
-        <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
-      </tr>
+        </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Status', new_status_path %>
-</br>
 </br>
 <div class="digg_pagination">
 <%= will_paginate @status %>

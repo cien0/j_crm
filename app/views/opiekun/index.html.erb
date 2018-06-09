@@ -14,8 +14,8 @@
   <tbody>
     <% @opiekun.each do |opiekun| %>
       <tr>
-        <td><%= opiekun.imie %></td>
-        <td><%= opiekun.nazwisko %></td>
+        <td class="align-middle"><%= opiekun.imie %></td>
+        <td class="align-middle"><%= opiekun.nazwisko %></td>
         <td><%= opiekun.login %></td>
         <td><%= opiekun.aktywny %></td>
         <td><%= link_to 'Pokaż', opiekun ,  class: "btn btn-link"%></td>

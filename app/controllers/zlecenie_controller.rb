@@ -1,6 +1,8 @@
 class ZlecenieController < ApplicationController
   before_action :set_zlecenie, only: [:show, :edit, :update, :destroy, :realizacja]
-  before_action :authenticate_user!, only: [:show, :edit] 
+  before_action :authenticate_user! 
+  before_action :authenticate_admin!, only: [:show, :edit]
+  
   
   # GET /zlecenie
   # GET /zlecenie.json
@@ -71,14 +73,17 @@ class ZlecenieController < ApplicationController
     end
   end
 
-def authenticate_user!
-    # check if current user is admin
+
+def authenticate_admin!
     if current_user.id != 2 then
-    #logger.debug {user_signed_in?}
-      # if current_user is not kierownik redirect to some route
       redirect_to '/'
     end
-    # if current_user is admin he will proceed to edit action
+end
+
+def authenticate_user!
+    if !user_signed_in? then
+      redirect_to '/'
+    end
 end
 
   private

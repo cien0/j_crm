@@ -23,7 +23,24 @@
         <td><%= kontrahenci.nazwa %></td>
         <td><%= kontrahenci.nip %></td>
         <td><%= kontrahenci.opiekun.login %></td>
-        <td><%= kontrahenci.status_text.status_text %></td>
+        
+    <% if kontrahenci.status_text_id==0  %>
+    <td bgcolor="#e6e6ff"> <%= kontrahenci.status_text.status_text %></td>
+    <% elsif kontrahenci.status_text_id==1  %>
+    <td bgcolor="#cceeff"> <%= kontrahenci.status_text.status_text %></td>
+    <% elsif kontrahenci.status_text_id==2  %>
+    <td bgcolor="#66ccff"> <%= kontrahenci.status_text.status_text %></td>
+    <% elsif kontrahenci.status_text_id==3  %>
+    <td bgcolor="#ff3300"> <%= kontrahenci.status_text.status_text %></td>
+    <% elsif kontrahenci.status_text_id==4  %>
+    <td bgcolor="#944dff"> <%= kontrahenci.status_text.status_text %></td>
+    <% elsif kontrahenci.status_text_id==5  %>
+    <td bgcolor="#80bfff"> <%= kontrahenci.status_text.status_text %></td>
+    <% elsif kontrahenci.status_text_id==10  %>
+    <td bgcolor="#66ff66"> <%= kontrahenci.status_text.status_text %></td>
+    <% end %>
+        
+        
         <td><%= link_to 'Pokaż', kontrahenci_lista_url(kontrahenci),  class: "btn btn-link" %></td>
         <td><%= link_to 'Edytuj', edit_kontrahenci_path(kontrahenci),  class: "btn btn-link" %></td>
         <td><%= link_to 'Kasuj', kontrahenci, method: :delete,  class: "btn btn-link",  data: { confirm: 'Czy jesteś pewny??'} %></td>

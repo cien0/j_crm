@@ -1,5 +1,7 @@
 class DostMarketingoweController < ApplicationController
   before_action :set_dost_marketingowe, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! 
+
 
   # GET /dost_marketingowe
   # GET /dost_marketingowe.json
@@ -65,6 +67,18 @@ class DostMarketingoweController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+def authenticate_admin!
+    if current_user.id != 1 then
+      redirect_to '/'
+    end
+end
+
+def authenticate_user!
+    if !user_signed_in? then
+      redirect_to '/'
+    end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

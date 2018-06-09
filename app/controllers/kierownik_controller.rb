@@ -1,5 +1,7 @@
 class KierownikController < ApplicationController
   before_action :set_kierownik, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! 
+
 
   # GET /kierownik
   # GET /kierownik.json
@@ -61,7 +63,17 @@ class KierownikController < ApplicationController
     end
   end
   
+def authenticate_admin!
+    if current_user.id != 1 then
+      redirect_to '/'
+    end
+end
 
+def authenticate_user!
+    if !user_signed_in? then
+      redirect_to '/'
+    end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

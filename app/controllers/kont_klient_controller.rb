@@ -1,5 +1,7 @@
 class KontKlientController < ApplicationController
   before_action :set_kont_klient, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! 
+
 
   # GET /kont_klient
   # GET /kont_klient.json
@@ -65,6 +67,18 @@ class KontKlientController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+def authenticate_admin!
+    if current_user.id != 1 then
+      redirect_to '/'
+    end
+end
+
+def authenticate_user!
+    if !user_signed_in? then
+      redirect_to '/'
+    end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

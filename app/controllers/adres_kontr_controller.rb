@@ -1,5 +1,7 @@
 class AdresKontrController < ApplicationController
   before_action :set_adres_kontr, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! 
+
 
   # GET /adres_kontr
   # GET /adres_kontr.json
@@ -60,6 +62,12 @@ class AdresKontrController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+def authenticate_user!
+    if !user_signed_in? then
+      redirect_to '/'
+    end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

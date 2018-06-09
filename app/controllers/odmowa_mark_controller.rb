@@ -2,6 +2,7 @@ class OdmowaMarkController < ApplicationController
   before_action :set_odmowa_mark, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user! 
 
+
   # GET /odmowa_mark
   # GET /odmowa_mark.json
   def index
@@ -63,13 +64,15 @@ class OdmowaMarkController < ApplicationController
   end
 
 def authenticate_admin!
-    # check if current user is admin
     if current_user.id != 1 then
-    #logger.debug {user_signed_in?}
-      # if current_user is not admin redirect to some route
       redirect_to '/'
     end
-    # if current_user is admin he will proceed to edit action
+end
+
+def authenticate_user!
+    if !user_signed_in? then
+      redirect_to '/'
+    end
 end
 
   private

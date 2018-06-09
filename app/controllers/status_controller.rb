@@ -1,5 +1,7 @@
 class StatusController < ApplicationController
   before_action :set_status, only: [:show, :update, :destroy]
+  before_action :authenticate_user! 
+
 
   # GET /status
   # GET /status.json
@@ -81,7 +83,7 @@ def edit
             k = Kontrahenci.lock.find(kontrahent.id)
             k.status_text_id = 4
             k.save!
-          end
+        end
         end
       end
     end
@@ -127,6 +129,18 @@ end
       format.json { head :no_content }
     end
   end
+
+def authenticate_admin!
+    if current_user.id != 1 then
+      redirect_to '/'
+    end
+end
+
+def authenticate_user!
+    if !user_signed_in? then
+      redirect_to '/'
+    end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

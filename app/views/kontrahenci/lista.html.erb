@@ -3,8 +3,25 @@
   <table class="table table-bordered table-hover">
   <tr><td><strong>Id system</strong></td><td><strong>Nazwa</strong></td></tr>
   <tr><td><%= @kontrahenci.system_id %></td><td><%= @kontrahenci.nazwa %></td></tr>
-  <tr><td><strong>Status</strong></td></tr>
-  <tr><td> <%= @kontrahenci.status_text.status_text %></td></tr>
+  <tr><td><strong>Status</strong></td><td><strong>Obroty z trzech ostatnich miesięcy</strong></td></tr>
+  <tr>
+    <% if @kontrahenci.status_text_id==0  %>
+    <td bgcolor="#e6e6ff"> <%= @kontrahenci.status_text.status_text %></td>
+    <% elsif @kontrahenci.status_text_id==1  %>
+    <td bgcolor="#cceeff"> <%= @kontrahenci.status_text.status_text %></td>
+    <% elsif @kontrahenci.status_text_id==2  %>
+    <td bgcolor="#66ccff"> <%= @kontrahenci.status_text.status_text %></td>
+    <% elsif @kontrahenci.status_text_id==3  %>
+    <td bgcolor="#ff3300"> <%= @kontrahenci.status_text.status_text %></td>
+    <% elsif @kontrahenci.status_text_id==4  %>
+    <td bgcolor="#944dff"> <%= @kontrahenci.status_text.status_text %></td>
+    <% elsif @kontrahenci.status_text_id==5  %>
+    <td bgcolor="#80bfff"> <%= @kontrahenci.status_text.status_text %></td>
+    <% elsif @kontrahenci.status_text_id==10  %>
+    <td bgcolor="#66ff66"> <%= @kontrahenci.status_text.status_text %></td>
+    <% end %>
+    
+    <td> <%= @suma.to_f %></td></tr>
   <tr><td><strong>Identyfikator opiekuna</strong></td></tr>
   <tr><td><%= @kontrahenci.opiekun.login %></td></tr>
     <tr><td><strong>NIP</strong></td></tr>

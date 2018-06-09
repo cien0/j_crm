@@ -1,6 +1,8 @@
 class AdresOsobaController < ApplicationController
   before_action :set_adres_osoba, only: [:show, :edit, :update, :destroy, :lista]
   before_action :set_osoba_kont, only: [:lista]
+  before_action :authenticate_user! 
+
   
   # GET /adres_osoba
   # GET /adres_osoba.json
@@ -69,6 +71,18 @@ class AdresOsobaController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+def authenticate_admin!
+    if current_user.id != 1 then
+      redirect_to '/'
+    end
+end
+
+def authenticate_user!
+    if !user_signed_in? then
+      redirect_to '/'
+    end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

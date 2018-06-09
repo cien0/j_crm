@@ -31,9 +31,9 @@
         <td><%= zlecenie.opis %></td>
         <td><%= zlecenie.status_zlecenia.status %></td>
         <td><%= zlecenie.raport %></td>
-        <td><%= link_to 'Show', zlecenie,  class: "btn btn-link" %></td>
-        <td><%= link_to 'Edit', edit_zlecenie_path(zlecenie),  class: "btn btn-link" %></td>
-        <td><%= link_to 'Destroy', zlecenie,  class: "btn btn-link", method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
+        <td><%= link_to 'Pokaż', zlecenie,  class: "btn btn-link" %></td>
+        <td><%= link_to 'Edycja', edit_zlecenie_path(zlecenie),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Skasuj', zlecenie,  class: "btn btn-link", method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -45,4 +45,4 @@
 <%= will_paginate @zlecenie %>
 </div>
 </br>
-<%= link_to 'New Zlecenie', new_zlecenie_path %>
+<%= link_to 'Nowe zlecenie', new_zlecenie_path %>

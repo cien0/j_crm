@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Imie:</strong>
   <%= @opiekun.imie %>
@@ -20,5 +18,5 @@
   <%= @opiekun.aktywny %>
 </p>
 
-<%= link_to 'Edytuj', edit_opiekun_path(@opiekun),  class: "btn btn-link" %> |
-<%= link_to 'Wróć', opiekun_index_path,  class: "btn btn-link" %>
+<%= link_to 'Edycja', edit_opiekun_path(@opiekun),  class: "btn btn-link" %> |
+<%= link_to 'Powrót', opiekun_index_path,  class: "btn btn-link" %>

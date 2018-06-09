@@ -20,14 +20,13 @@
         <td><%= osoba_kont.imiona %></td>
         <td><%= osoba_kont.nazwisko %></td>
         <td><%= osoba_kont.data_urodz %></td>
-        <td><%= link_to 'Show', osoba_kont,  class: "btn btn-link" %></td>
-        <td><%= link_to 'Edit', edit_osoba_kont_path(osoba_kont),  class: "btn btn-link" %></td>
-        <td><%= link_to 'Destroy', osoba_kont,  class: "btn btn-link", method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
+        <td><%= link_to 'Pokaż', osoba_kont,  class: "btn btn-link" %></td>
+        <td><%= link_to 'Edycja', edit_osoba_kont_path(osoba_kont),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Skasuj', osoba_kont,  class: "btn btn-link", method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'Nowa osoba kontaktowa', new_osoba_kont_path %>

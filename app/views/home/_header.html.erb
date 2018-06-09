@@ -36,9 +36,13 @@
             <% if current_user.id  == 1 %>
                 <nav class="navbar navbar-light bg-light">
                     <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">             
-                            <li>
-                                <%= link_to('Edycja użytkowników', opiekun_index_path) %>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">             
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Edycja użytkowników<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                            <li><%= link_to('Edycja użytkowników', opiekun_index_path) %></li>
+                            <li><%= link_to('Edycja kierowników', kierownik_index_path) %></li>
+                            </ul>
                             </li>
                             <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Import<span class="caret"></span></a>
@@ -70,9 +74,8 @@
                             <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Osoba kontaktowa<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li>
                                     <li><%= link_to('Osoba kontaktowa', osoba_kont_index_path) %></li>
-                                    </li>
+                                    <li><%= link_to('Adresy osób kontaktowa', adres_osoba_index_path) %></li>
                                 </ul>
                             </li>
                             
@@ -99,12 +102,8 @@
                              <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Osoba kontaktowa<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li>
                                     <li><%= link_to('Osoba kontaktowa', osoba_kont_index_path) %></li>
-                                    </li>
-                                     <li>
                                     <li><%= link_to('Adresy osób kontaktowa', adres_osoba_index_path) %></li>
-                                    </li>
                                 </ul>
                             </li>
                             

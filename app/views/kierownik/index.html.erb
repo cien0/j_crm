@@ -1,6 +1,6 @@
 <h1>Lista kierowników</h1>
 
-<table>
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Imie</th>
@@ -18,9 +18,9 @@
         <td><%= kierownik.nazwisko %></td>
         <td><%= kierownik.login %></td>
         <td><%= kierownik.aktywny %></td>
-        <td><%= link_to 'Pokaż', kierownik %></td>
-        <td><%= link_to 'Edycja', edit_kierownik_path(kierownik) %></td>
-        <td><%= link_to 'Skasuj', kierownik, method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
+        <td><%= link_to 'Pokaż', kierownik,  class: "btn btn-link" %></td>
+        <td><%= link_to 'Edycja', edit_kierownik_path(kierownik),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Skasuj', kierownik,  class: "btn btn-link", method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>

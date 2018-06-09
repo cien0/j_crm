@@ -83,6 +83,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inf_dodatka_kontr_params
-      params.require(:inf_dodatka_kontr).permit(:Id_Kontrahenci, :Inf_dodatkowa)
+      params.require(:inf_dodatka_kontr).permit(:kontrahenci_id, :inf_dodatkowa)
     end
 end

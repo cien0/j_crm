@@ -110,6 +110,54 @@
 </br>
 </br>
 </br>
+<button type="button" id="dodatkowe" class="btn btn-primary">Pokaż informacje dodatkowe</button>
+<div id="dodatkowe" class="">
+  <table class="table table-bordered table-striped table-hover align-middle">
+  <thead>
+    <tr>
+      <th>Kontrahent</th>
+      <th>Informacja dodatkowa</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inf_dodatka_kontr.each do |inf_dodatka_kontr| %>
+      <tr>
+        <td><%= inf_dodatka_kontr.kontrahenci.nazwa %></td>
+        <td><%= inf_dodatka_kontr.inf_dodatkowa %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</br>
+</br>
+</br>
+<button type="button" id="odmowa" class="btn btn-primary">Odmowy marketingowe</button>
+<div id="odmowa" class="">
+  <table class="table table-bordered table-striped table-hover align-middle">
+  <thead>
+    <tr>
+      <th>Kontrahent</th>
+      <th>Odmowa typ</th>
+      <th>Data</th>
+     </tr>
+  </thead>
+
+  <tbody>
+    <% @odmowa_mark.each do |odmowa_mark| %>
+      <tr>
+        <td><%= odmowa_mark.kontrahenci.nazwa %></td>
+        <td><%= odmowa_mark.odmowa_typ.typ %></td>
+        <td><%= odmowa_mark.data %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</br>
+</br>
+</br>
 <div>
 <%= link_to 'Powrót', kontrahenci_index_path %>
 </div>

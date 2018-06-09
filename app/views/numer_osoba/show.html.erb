@@ -1,21 +1,18 @@
 <p>
   <strong>Id osoba kont:</strong>
-  <%= @numer_osoba.Id_Osoba_kont %>
+  <%= @numer_osoba.osoba_kont.imie_and_nazwisko %>
 </p>
-
+<p>
+  <strong>Typ kontaktu:</strong>
+  <%= @numer_osoba.typ_kontaktu.typ %>
+</p>
 <p>
   <strong>Kontakt:</strong>
-  <%= @numer_osoba.Kontakt %>
+  <%= @numer_osoba.kontakt %>
 </p>
-
-<p>
-  <strong>Typ:</strong>
-  <%= @numer_osoba.Typ %>
-</p>
-
 <p>
   <strong>Opis:</strong>
-  <%= @numer_osoba.Opis %>
+  <%= @numer_osoba.opis %>
 </p>
 
 <%= link_to 'Edycja', edit_numer_osoba_path(@numer_osoba) %> |

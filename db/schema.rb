@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180530060111) do
+ActiveRecord::Schema.define(version: 20180609123836) do
 
   create_table "adres_kontr", force: :cascade do |t|
     t.integer  "kontrahenci_id"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20180530060111) do
     t.decimal  "ile"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "kontrahenci_id"
+    t.date     "data"
   end
 
   create_table "faktury", force: :cascade do |t|
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 20180530060111) do
     t.text     "inf_dodat"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "opiekun_id"
   end
 
   create_table "kontrahenci", force: :cascade do |t|
@@ -101,8 +104,11 @@ ActiveRecord::Schema.define(version: 20180530060111) do
     t.string   "numer_fak"
     t.string   "email"
     t.integer  "opiekun_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "status_id",       default: 3
+    t.integer  "status_tekst_id", default: 3
+    t.integer  "status_text_id",  default: 3
   end
 
   create_table "numer_osoba", force: :cascade do |t|
@@ -129,6 +135,7 @@ ActiveRecord::Schema.define(version: 20180530060111) do
     t.date     "data"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "kontrahenci_id"
   end
 
   create_table "odmowa_typ", force: :cascade do |t|
@@ -151,8 +158,9 @@ ActiveRecord::Schema.define(version: 20180530060111) do
     t.string   "imiona"
     t.string   "nazwisko"
     t.date     "data_urodz"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "kontrahenci_id"
   end
 
   create_table "status", force: :cascade do |t|
@@ -175,6 +183,12 @@ ActiveRecord::Schema.define(version: 20180530060111) do
   end
 
   create_table "typ_adresu", force: :cascade do |t|
+    t.string   "typ"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "typ_kontaktu", force: :cascade do |t|
     t.string   "typ"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -31,6 +31,16 @@ class KontrahenciController < ApplicationController
       @osoby = []
     end
     
+    @inf_dodatka_kontr = InfDodatkaKontr.where(:kontrahenci_id => @kontrahenci.id)
+    if @inf_dodatka_kontr.nil? then
+      @inf_dodatka_kontr = []
+    end
+    
+    @odmowa_mark = OdmowaMark.where(:kontrahenci_id => @kontrahenci.id)
+    if @odmowa_mark.nil? then
+      @odmowa_mark = []
+    end
+    
     ktory= @kontrahenci.id
     m1=1.month.ago.month
     y1=1.month.ago.year

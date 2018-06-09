@@ -40,4 +40,20 @@ $(function() {
     });
 });
 
+$(function() {
+    $("div#dodatkowe").hide();
+    $("button#dodatkowe").click(function(event) {
+        event.preventDefault();
+        $("div#dodatkowe").toggle(1000);
+    });
+});
+$(function() {
+    $("div#odmowa").hide();
+    $("button#odmowa").click(function(event) {
+        event.preventDefault();
+        $("div#odmowa").toggle(1000);
+    });
+});
+
+
 

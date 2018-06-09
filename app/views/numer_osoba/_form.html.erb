@@ -13,19 +13,19 @@
 
   <div class="field">
     <%= f.label :osoba_kont_id %><br>
-    <%= f.number_field :osoba_kont_id %>
+    <%= f.select :osoba_kont_id, options_from_collection_for_select( OsobaKont.all, 'id', 'imie_and_nazwisko', @numer_osoba.osoba_kont_id.to_s), :prompt => "" %>
+  </div>
+   <div class="field">
+    <%= f.label :typ_kontaktu %><br>
+    <%= f.select :typ_kontaktu_id, options_from_collection_for_select( TypKontaktu.all, 'id', 'typ', @numer_osoba.typ_kontaktu_id.to_s), :prompt => "" %>
   </div>
   <div class="field">
     <%= f.label :kontakt %><br>
-    <%= f.text_field :kontakt %>
-  </div>
-  <div class="field">
-    <%= f.label :typ %><br>
-    <%= f.number_field :typ %>
+    <%= f.text_field :kontakt, :size=>"80", :maxlength=>"254" %>
   </div>
   <div class="field">
     <%= f.label :opis %><br>
-    <%= f.text_area :opis %>
+    <%= f.text_area :opis, cols: "80", rows: "6" %>
   </div>
   <div class="actions">
     <%= f.submit %>

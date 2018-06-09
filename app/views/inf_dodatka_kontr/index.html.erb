@@ -1,9 +1,9 @@
 <h1>Lista informacji dodatkowych kontr.</h1>
 
-<table>
+<table class="table table-bordered table-striped table-hover align-middle">
   <thead>
     <tr>
-      <th>KOntrahent</th>
+      <th>Kontrahent</th>
       <th>Informacja dodatkowa</th>
       <th colspan="3"></th>
     </tr>
@@ -12,11 +12,11 @@
   <tbody>
     <% @inf_dodatka_kontr.each do |inf_dodatka_kontr| %>
       <tr>
-        <td><%= inf_dodatka_kontr.kontrahenci_id %></td>
+        <td><%= inf_dodatka_kontr.kontrahenci.nazwa %></td>
         <td><%= inf_dodatka_kontr.inf_dodatkowa %></td>
-        <td><%= link_to 'Pokaż', inf_dodatka_kontr %></td>
-        <td><%= link_to 'Edycja', edit_inf_dodatka_kontr_path(inf_dodatka_kontr) %></td>
-        <td><%= link_to 'Powrót', inf_dodatka_kontr, method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
+        <td><%= link_to 'Pokaż', inf_dodatka_kontr,  class: "btn btn-link" %></td>
+        <td><%= link_to 'Edycja', edit_inf_dodatka_kontr_path(inf_dodatka_kontr),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Skasuj', inf_dodatka_kontr,  class: "btn btn-link", method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :Id_Kontrahenci %><br>
-    <%= f.number_field :Id_Kontrahenci %>
+    <%= f.label :kontrahenci_id %><br>
+     <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => "Wybierz klienta"}, { :class => "chosen-select" } %>
   </div>
   <div class="field">
-    <%= f.label :Inf_dodatkowa %><br>
-    <%= f.text_area :Inf_dodatkowa %>
+    <%= f.label :inf_dodatkowa %><br>
+    <%= f.text_area :inf_dodatkowa, cols: "80", rows: "6"  %>
   </div>
   <div class="actions">
     <%= f.submit %>

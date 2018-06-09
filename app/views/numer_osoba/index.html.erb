@@ -1,11 +1,11 @@
 <h1>Lista numerów osób kontaktowych</h1>
 
-<table>
+<table class="table table-bordered table-striped table-hover align-middle">
   <thead>
     <tr>
-      <th>Id osoba kont</th>
-      <th>Kontakt</th>
+      <th>Osoba kontaktowa</th>
       <th>Typ</th>
+      <th>Kontakt</th>
       <th>Opis</th>
       <th colspan="3"></th>
     </tr>
@@ -14,13 +14,13 @@
   <tbody>
     <% @numer_osoba.each do |numer_osoba| %>
       <tr>
-        <td><%= numer_osoba.osoba_kont_id %></td>
+        <td><%= numer_osoba.osoba_kont.imie_and_nazwisko %></td>
+        <td><%= numer_osoba.typ_kontaktu.typ %></td>
         <td><%= numer_osoba.kontakt %></td>
-        <td><%= numer_osoba.typ %></td>
-        <td><%= numer_osoba.Opis %></td>
-        <td><%= link_to 'Pokaż', numer_osoba %></td>
-        <td><%= link_to 'Edycja', edit_numer_osoba_path(numer_osoba) %></td>
-        <td><%= link_to 'Skasuj', numer_osoba, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= numer_osoba.opis %></td>
+        <td><%= link_to 'Pokaż', numer_osoba,  class: "btn btn-link" %></td>
+        <td><%= link_to 'Edycja', edit_numer_osoba_path(numer_osoba),  class: "btn btn-link" %></td>
+        <td><%= link_to 'Skasuj', numer_osoba,  class: "btn btn-link", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,11 +1,11 @@
 <p>
   <strong>Kontrahent: </strong>
-  <%= @inf_dodatka_kontr.Id_Kontrahenci %>
+  <%= @inf_dodatka_kontr.kontrahenci.nazwa %>
 </p>
 
 <p>
   <strong>Informacja dodatkowa: </strong>
-  <%= @inf_dodatka_kontr.Inf_dodatkowa %>
+  <%= @inf_dodatka_kontr.inf_dodatkowa %>
 </p>
 
 <%= link_to 'Edycja', edit_inf_dodatka_kontr_path(@inf_dodatka_kontr) %> |

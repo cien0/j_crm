@@ -5,9 +5,8 @@
     <tr>
       <th>Kontrahent</th>
       <th>Imie</th>
-      <th>Imiona</th>
       <th>Nazwisko</th>
-      <th>Data urodz</th>
+      <th>Data urodzenia</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +16,6 @@
       <tr>
         <td><%= osoba_kont.kontrahenci.nazwa %></td>
         <td><%= osoba_kont.imie %></td>
-        <td><%= osoba_kont.imiona %></td>
         <td><%= osoba_kont.nazwisko %></td>
         <td><%= osoba_kont.data_urodz %></td>
         <td><%= link_to 'Pokaż', osoba_kont,  class: "btn btn-link" %></td>

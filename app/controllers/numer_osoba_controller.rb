@@ -83,6 +83,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def numer_osoba_params
-      params.require(:numer_osoba).permit(:Id_Osoba_kont, :Kontakt, :Typ, :Opis)
+      params.require(:numer_osoba).permit(:osoba_kont_id, :typ_kontaktu_id, :kontakt, :opis)
     end
 end

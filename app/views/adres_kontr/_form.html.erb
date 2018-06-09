@@ -1,7 +1,7 @@
 <%= form_for(@adres_kontr) do |f| %>
   <% if @adres_kontr.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@adres_kontr.errors.count, "error") %> prohibited this adres_kontr from being saved:</h2>
+      <h2><%= pluralize(@adres_kontr.errors.count, 'błędów') %> uniemożliwia zapisanie tego kontrahenta:</h2>
 
       <ul>
       <% @adres_kontr.errors.full_messages.each do |message| %>
@@ -12,39 +12,39 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :kontrahenci_id %><br>
-    <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => ""}, { :class => "chosen-select" }  %>
+    <%= f.label "Kontrahent" %><br>
+    <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => "Wybierz klienta"}, { :class => "chosen-select" }  %>
   </div>
   <div class="field">
-    <%= f.label :typ_adresu_id %><br>
+    <%= f.label "Typ adresu" %><br>
     <%= f.select :typ_adresu_id, options_from_collection_for_select( TypAdresu.all, 'id', 'typ', @adres_kontr.typ_adresu_id.to_s), :prompt => ""%>
   </div>
   <div class="field">
-    <%= f.label :kraj %><br>
+    <%= f.label "Kraj" %><br>
     <%= f.text_field :kraj %>
   </div>
   <div class="field">
-    <%= f.label :kod_pocztowy %><br>
+    <%= f.label "Kod pocztowy" %><br>
     <%= f.text_field :kod_pocztowy %>
   </div>
   <div class="field">
-    <%= f.label :miasto %><br>
+    <%= f.label "Miasto" %><br>
     <%= f.text_field :miasto %>
   </div>
   <div class="field">
-    <%= f.label :skrytka %><br>
+    <%= f.label "Skrytka" %><br>
     <%= f.text_field :skrytka %>
   </div>
   <div class="field">
-    <%= f.label :ulica %><br>
+    <%= f.label "Ulica" %><br>
     <%= f.text_field :ulica %>
   </div>
   <div class="field">
-    <%= f.label :nr_budynku %><br>
+    <%= f.label "Nr budynku" %><br>
     <%= f.text_field :nr_budynku %>
   </div>
   <div class="field">
-    <%= f.label :nr_lokalu %><br>
+    <%= f.label "Nr lokalu" %><br>
     <%= f.text_field :nr_lokalu %>
   </div>
   <div class="actions">

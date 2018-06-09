@@ -2,7 +2,7 @@
 <%= form_for(@zlecenie) do |f| %>
   <% if @zlecenie.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@zlecenie.errors.count, "error") %> prohibited this zlecenie from being saved:</h2>
+      <h2><%= pluralize(@zlecenie.errors.count, 'błędów') %> uniemożliwia zapisanie tego kontrahenta:</h2>
 
       <ul>
       <% @zlecenie.errors.full_messages.each do |message| %>

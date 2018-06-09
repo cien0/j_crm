@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Kierownik</h1>
+<h1>Lista kierowników</h1>
 
 <table>
   <thead>
@@ -16,13 +14,13 @@
   <tbody>
     <% @kierownik.each do |kierownik| %>
       <tr>
-        <td><%= kierownik.Imie %></td>
-        <td><%= kierownik.Nazwisko %></td>
-        <td><%= kierownik.Login %></td>
-        <td><%= kierownik.Aktywny %></td>
-        <td><%= link_to 'Show', kierownik %></td>
-        <td><%= link_to 'Edit', edit_kierownik_path(kierownik) %></td>
-        <td><%= link_to 'Destroy', kierownik, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= kierownik.imie %></td>
+        <td><%= kierownik.nazwisko %></td>
+        <td><%= kierownik.login %></td>
+        <td><%= kierownik.aktywny %></td>
+        <td><%= link_to 'Pokaż', kierownik %></td>
+        <td><%= link_to 'Edycja', edit_kierownik_path(kierownik) %></td>
+        <td><%= link_to 'Skasuj', kierownik, method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Kierownik', new_kierownik_path %>
+<%= link_to 'Nowy kierownik', new_kierownik_path %>

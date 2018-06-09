@@ -1,11 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Obroty</h1>
+<h1>Lista obrotów</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Id kontrahenci</th>
+      <th>Kontrahent</th>
       <th>Rok</th>
       <th>Miesiac</th>
       <th>Kwota</th>
@@ -20,14 +18,9 @@
         <td><%= obroty.rok %></td>
         <td><%= obroty.miesiac %></td>
         <td><%= obroty.kwota %></td>
-        <td><%= link_to 'Show', obroty %></td>
-        <td><%= link_to 'Edit', edit_obroty_path(obroty) %></td>
-        <td><%= link_to 'Destroy', obroty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Pokaż', obroty %></td>
+        <td><%= link_to 'Skasuj', obroty, method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Obroty', new_obroty_path %>

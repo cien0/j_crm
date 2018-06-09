@@ -1,7 +1,7 @@
 <%= form_for(@kierownik) do |f| %>
   <% if @kierownik.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@kierownik.errors.count, "error") %> prohibited this kierownik from being saved:</h2>
+      <h2><%= pluralize(@kierownik.errors.count, 'błędów') %> uniemożliwia zapisanie tego kontrahenta:</h2>
 
       <ul>
       <% @kierownik.errors.full_messages.each do |message| %>

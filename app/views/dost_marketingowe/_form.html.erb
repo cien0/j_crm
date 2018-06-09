@@ -1,7 +1,7 @@
 <%= form_for(@dost_marketingowe) do |f| %>
   <% if @dost_marketingowe.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@dost_marketingowe.errors.count, "error") %> prohibited this dost_marketingowe from being saved:</h2>
+      <h2><%= pluralize(@dost_marketingowe.errors.count, 'błędów') %> uniemożliwia zapisanie tego kontrahenta:</h2>
 
       <ul>
       <% @dost_marketingowe.errors.full_messages.each do |message| %>
@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :Kontrahent %><br>
-     <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => ""}, { :class => "chosen-select" } %>
+     <%= f.select :kontrahenci_id, Kontrahenci.all.order(:nazwa).map { |p| [p.nazwa, p.id] }, {:prompt => "Wybierz klienta"}, { :class => "chosen-select" } %>
   </div>
   <div class="field">
     <%= f.label :typ %><br>

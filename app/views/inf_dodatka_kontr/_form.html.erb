@@ -1,7 +1,7 @@
 <%= form_for(@inf_dodatka_kontr) do |f| %>
   <% if @inf_dodatka_kontr.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@inf_dodatka_kontr.errors.count, "error") %> prohibited this inf_dodatka_kontr from being saved:</h2>
+      <h2><%= pluralize(@inf_dodatka_kontr.errors.count, 'błędów') %> uniemożliwia zapisanie tego kontrahenta:</h2>
 
       <ul>
       <% @inf_dodatka_kontr.errors.full_messages.each do |message| %>

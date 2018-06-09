@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Faktury</h1>
+<h1>Lista faktur</h1>
 
 <table>
   <thead>
@@ -20,9 +18,9 @@
         <td><%= faktury.nr_faktury %></td>
         <td><%= faktury.kwota %></td>
         <td><%= faktury.vat %></td>
-        <td><%= link_to 'Show', faktury %></td>
-        <td><%= link_to 'Edit', edit_faktury_path(faktury) %></td>
-        <td><%= link_to 'Destroy', faktury, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Pokaż', faktury %></td>
+        <td><%= link_to 'Edycja', edit_faktury_path(faktury) %></td>
+        <td><%= link_to 'Skasuj', faktury, method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Faktury', new_faktury_path %>
+<%= link_to 'Nowa faktura', new_faktury_path %>

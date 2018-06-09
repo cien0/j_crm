@@ -1,7 +1,7 @@
 <%= form_for(@numer_osoba) do |f| %>
   <% if @numer_osoba.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@numer_osoba.errors.count, "error") %> prohibited this numer_osoba from being saved:</h2>
+      <h2><%= pluralize(@numer_osoba.errors.count, 'błędów') %> uniemożliwia zapisanie tego kontrahenta:</h2>
 
       <ul>
       <% @numer_osoba.errors.full_messages.each do |message| %>
@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :Id_Osoba_kont %><br>
-    <%= f.number_field :Id_Osoba_kont %>
+    <%= f.label :osoba_kont_id %><br>
+    <%= f.number_field :osoba_kont_id %>
   </div>
   <div class="field">
-    <%= f.label :Kontakt %><br>
-    <%= f.text_field :Kontakt %>
+    <%= f.label :kontakt %><br>
+    <%= f.text_field :kontakt %>
   </div>
   <div class="field">
-    <%= f.label :Typ %><br>
-    <%= f.number_field :Typ %>
+    <%= f.label :typ %><br>
+    <%= f.number_field :typ %>
   </div>
   <div class="field">
-    <%= f.label :Opis %><br>
-    <%= f.text_area :Opis %>
+    <%= f.label :opis %><br>
+    <%= f.text_area :opis %>
   </div>
   <div class="actions">
     <%= f.submit %>

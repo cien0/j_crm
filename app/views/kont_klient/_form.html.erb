@@ -1,7 +1,7 @@
 <%= form_for(@kont_klient) do |f| %>
   <% if @kont_klient.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@kont_klient.errors.count, "error") %> prohibited this kont_klient from being saved:</h2>
+      <h2><%= pluralize(@kont_klient.errors.count, 'błędów') %> uniemożliwia zapisanie tego kontrahenta:</h2>
 
       <ul>
       <% @kont_klient.errors.full_messages.each do |message| %>
@@ -36,7 +36,7 @@
     <%= f.text_area :inf_dodat, cols: "80", rows: "6" %>
   </div>
   <div class="field">
-    <%= f.hidden_field :opiekun_id , :value => current_user.id-1 %> <!-- current_user.id %-->
+    <%= f.hidden_field :opiekun_id , :value => current_user.id-1 %>
   </div>
   <div class="actions">
     <%= f.submit %>

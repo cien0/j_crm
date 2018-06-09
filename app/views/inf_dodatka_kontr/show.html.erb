@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Id kontrahenci:</strong>
+  <strong>Kontrahent: </strong>
   <%= @inf_dodatka_kontr.Id_Kontrahenci %>
 </p>
 
 <p>
-  <strong>Inf dodatkowa:</strong>
+  <strong>Informacja dodatkowa: </strong>
   <%= @inf_dodatka_kontr.Inf_dodatkowa %>
 </p>
 
-<%= link_to 'Edit', edit_inf_dodatka_kontr_path(@inf_dodatka_kontr) %> |
-<%= link_to 'Back', inf_dodatka_kontr_index_path %>
+<%= link_to 'Edycja', edit_inf_dodatka_kontr_path(@inf_dodatka_kontr) %> |
+<%= link_to 'Powrót', inf_dodatka_kontr_index_path %>

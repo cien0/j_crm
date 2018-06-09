@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Numer Osoba</h1>
+<h1>Lista numerów osób kontaktowych</h1>
 
 <table>
   <thead>
@@ -16,13 +14,13 @@
   <tbody>
     <% @numer_osoba.each do |numer_osoba| %>
       <tr>
-        <td><%= numer_osoba.Id_Osoba_kont %></td>
-        <td><%= numer_osoba.Kontakt %></td>
-        <td><%= numer_osoba.Typ %></td>
+        <td><%= numer_osoba.osoba_kont_id %></td>
+        <td><%= numer_osoba.kontakt %></td>
+        <td><%= numer_osoba.typ %></td>
         <td><%= numer_osoba.Opis %></td>
-        <td><%= link_to 'Show', numer_osoba %></td>
-        <td><%= link_to 'Edit', edit_numer_osoba_path(numer_osoba) %></td>
-        <td><%= link_to 'Destroy', numer_osoba, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Pokaż', numer_osoba %></td>
+        <td><%= link_to 'Edycja', edit_numer_osoba_path(numer_osoba) %></td>
+        <td><%= link_to 'Skasuj', numer_osoba, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Numer osoba', new_numer_osoba_path %>
+<%= link_to 'Nowy numer osoby kontaktowej', new_numer_osoba_path %>

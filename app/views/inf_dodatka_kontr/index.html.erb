@@ -1,12 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Inf Dodatka Kontr</h1>
+<h1>Lista informacji dodatkowych kontr.</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Id kontrahenci</th>
-      <th>Inf dodatkowa</th>
+      <th>KOntrahent</th>
+      <th>Informacja dodatkowa</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,11 +12,11 @@
   <tbody>
     <% @inf_dodatka_kontr.each do |inf_dodatka_kontr| %>
       <tr>
-        <td><%= inf_dodatka_kontr.Id_Kontrahenci %></td>
-        <td><%= inf_dodatka_kontr.Inf_dodatkowa %></td>
-        <td><%= link_to 'Show', inf_dodatka_kontr %></td>
-        <td><%= link_to 'Edit', edit_inf_dodatka_kontr_path(inf_dodatka_kontr) %></td>
-        <td><%= link_to 'Destroy', inf_dodatka_kontr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= inf_dodatka_kontr.kontrahenci_id %></td>
+        <td><%= inf_dodatka_kontr.inf_dodatkowa %></td>
+        <td><%= link_to 'Pokaż', inf_dodatka_kontr %></td>
+        <td><%= link_to 'Edycja', edit_inf_dodatka_kontr_path(inf_dodatka_kontr) %></td>
+        <td><%= link_to 'Powrót', inf_dodatka_kontr, method: :delete, data: { confirm: 'Jesteś pewny?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Inf dodatka kontr', new_inf_dodatka_kontr_path %>
+<%= link_to 'Mowa informacja dodatkowa', new_inf_dodatka_kontr_path %>

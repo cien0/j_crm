@@ -1,24 +1,21 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Id kontrahenci:</strong>
-  <%= @obroty.Id_kontrahenci %>
+  <strong>Kontrahent</strong>
+  <%= @obroty.kontrahenci_id %>
 </p>
 
 <p>
   <strong>Rok:</strong>
-  <%= @obroty.Rok %>
+  <%= @obroty.rok %>
 </p>
 
 <p>
   <strong>Miesiac:</strong>
-  <%= @obroty.Miesiac %>
+  <%= @obroty.miesiac %>
 </p>
 
 <p>
   <strong>Kwota:</strong>
-  <%= @obroty.Kwota %>
+  <%= @obroty.kwota %>
 </p>
 
-<%= link_to 'Edit', edit_obroty_path(@obroty) %> |
-<%= link_to 'Back', obroty_index_path %>
+<%= link_to 'Powrót', obroty_index_path %>

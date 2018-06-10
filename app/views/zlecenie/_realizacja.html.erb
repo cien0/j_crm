@@ -10,6 +10,18 @@
       </ul>
     </div>
   <% end %>
+  <p>
+  <strong>Kontrahent:</strong>
+  <%= @zlecenie.kontrahenci.nazwa %>
+  </p>
+  <p>
+  <strong>Typ:</strong>
+  <%= @zlecenie.typ_spotkania.typ %>
+ </p>
+ <p>
+  <strong>Opis:</strong>
+  <%= @zlecenie.opis %>
+</p>
   <div class="field">
     <%= f.label :status_zlecenia_id %><br>
     <%=  f.select :status_zlecenia_id, options_from_collection_for_select( StatusZlecenia.all, 'id', 'status', @zlecenie.status_zlecenia_id.to_s), :prompt => "" %>
